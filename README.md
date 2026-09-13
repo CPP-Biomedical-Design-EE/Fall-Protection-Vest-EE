@@ -10,8 +10,8 @@ Build and test the sensing, electronics, fall-detection, power, and trigger-cont
 
 These are the EE team's current working choices, not requirements stated by the slides:
 
-- **MCU platform:** STM32 Cortex-M33. The exact board and chip are still to be selected and recorded in [`docs/decisions/`](docs/decisions/).
-- **Firmware:** STM32CubeIDE
+- **MCU platform:** Arduino Uno R4. The exact board and chip are still to be selected and recorded in [`docs/decisions/`](docs/decisions/).
+- **Firmware:** ArduinoIDE
 - **Algorithm and data analysis:** Python and Jupyter
 - **Schematic and PCB design:** KiCad
 - **Circuit simulation:** LTspice
@@ -31,7 +31,7 @@ The team should compare candidate boards and IMUs before adding an exact part nu
 ## Repository map
 
 - [BOM](bom/) - electrical parts list and purchasing information
-- [Firmware](firmware/) - STM32 firmware work and setup notes
+- [Firmware](firmware/) - Arduino firmware work and setup notes
 - [Algorithm and notebooks](python/) - Python analysis, data collection, and Jupyter notebooks
 - [Movement data](data/) - de-identified activity datasets
 - [Power and circuit simulation](simulation/ltspice/) - LTspice files and simulation notes
@@ -63,9 +63,9 @@ These dates and deliverables come from the uploaded **BDC Fall 2026 Schedule**.
 
 ## Current next steps
 
-1. Confirm the exact STM32 Cortex-M33 development board and document the decision.
+1. Confirm the exact Arduino Uno R4 development board and document the decision.
 2. Compare IMU candidates against the project requirements before selecting one.
-3. Create the STM32CubeIDE firmware project and confirm basic serial output.
+3. Create the Arduino Uno R4 firmware project and confirm basic serial output.
 4. Read tri-axial acceleration and angular velocity from the selected IMU.
 5. Collect safe movement data and evaluate SVM thresholds in Python/Jupyter.
 6. Build and test each circuit with an LED, buzzer, or other safe dummy load.
@@ -80,8 +80,5 @@ These dates and deliverables come from the uploaded **BDC Fall 2026 Schedule**.
 5. Open a pull request and explain what changed, what you tested, and what still needs help.
 6. Ask at least one teammate to review it before merging.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-## Firmware status
 
-The selected direction is STM32 Cortex-M33 with STM32CubeIDE. The exact board/chip decision and the STM32CubeIDE project are not complete yet.
