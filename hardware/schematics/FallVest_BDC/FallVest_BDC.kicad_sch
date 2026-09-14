@@ -231,148 +231,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:Battery_Cell"
 			(pin_numbers
 				(hide yes)
@@ -560,156 +418,6 @@
 					(at 0 -2.54 90)
 					(length 2.54)
 					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Diode:1N5819"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "1N5819"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-				(at 0 -4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode Schottky"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "D*DO?41*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "1N5819_0_1"
-				(polyline
-					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "1N5819_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3217,137 +2925,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+6V"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+6V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+6V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+6V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+6V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-	)
-	(junction
-		(at 173.99 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0135d5d7-676e-4666-8af1-037ddf22f3b8")
 	)
 	(junction
 		(at 97.79 29.21)
@@ -3356,22 +2933,10 @@
 		(uuid "0abb433c-3f63-4535-b799-a5a3d8ac7366")
 	)
 	(junction
-		(at 173.99 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1a9a4e34-f74a-4c39-a01e-9ecd37448c4c")
-	)
-	(junction
 		(at 96.52 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2aad8565-c74f-4f66-85e8-ae8d15fa1245")
-	)
-	(junction
-		(at 166.37 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aa4d312a-66ab-4031-b7ff-2e3631e54499")
 	)
 	(junction
 		(at 101.6 121.92)
@@ -3403,6 +2968,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 104.14) (xy 99.06 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04b9befb-1ee5-4894-87dd-b7a35084092f")
+	)
+	(wire
+		(pts
 			(xy 93.98 101.6) (xy 101.6 101.6)
 		)
 		(stroke
@@ -3410,16 +2985,6 @@
 			(type default)
 		)
 		(uuid "07d8aae3-406e-4093-b850-59660c7a1a1a")
-	)
-	(wire
-		(pts
-			(xy 152.4 58.42) (xy 166.37 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ee5fd77-3d75-4383-a2b6-6cf21e03fe73")
 	)
 	(wire
 		(pts
@@ -3433,13 +2998,13 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 48.26) (xy 166.37 50.8)
+			(xy 152.4 58.42) (xy 166.37 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1983f339-281a-4380-8089-876df0d1fb5a")
+		(uuid "255b59c9-21a4-4690-958d-52a4b26eacbe")
 	)
 	(wire
 		(pts
@@ -3513,16 +3078,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 66.04) (xy 173.99 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "69ea3aa5-70df-4e39-aecb-312cba2d91da")
-	)
-	(wire
-		(pts
 			(xy 73.66 53.34) (xy 73.66 68.58)
 		)
 		(stroke
@@ -3563,13 +3118,13 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 121.92) (xy 180.34 121.92)
+			(xy 199.39 124.46) (xy 199.39 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "90abdb4a-d2e5-404c-8cdb-33bab3de06dc")
+		(uuid "8da6191a-f7c7-459b-895b-2790c33236c8")
 	)
 	(wire
 		(pts
@@ -3583,23 +3138,33 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 68.58) (xy 180.34 68.58)
+			(xy 173.99 66.04) (xy 173.99 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a5c53f03-fa1d-469f-bfc6-dcf47adae6a6")
+		(uuid "a3618146-47f8-4346-beca-35dae1d47441")
 	)
 	(wire
 		(pts
-			(xy 180.34 93.98) (xy 180.34 121.92)
+			(xy 99.06 104.14) (xy 99.06 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b04b9387-f7d0-4c2a-9296-9e43cbf07876")
+		(uuid "ae05a866-0737-4a70-97b0-ae39e05bc26f")
+	)
+	(wire
+		(pts
+			(xy 99.06 124.46) (xy 199.39 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b26eb22f-476c-4d7e-9caa-adc4fd16d68f")
 	)
 	(wire
 		(pts
@@ -3630,16 +3195,6 @@
 			(type default)
 		)
 		(uuid "b919b991-114a-4cff-89e4-6851b7b75eb7")
-	)
-	(wire
-		(pts
-			(xy 166.37 48.26) (xy 173.99 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c396c2db-42dc-4138-aef1-a9675d70bd2d")
 	)
 	(wire
 		(pts
@@ -12928,7 +12483,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery_Cell")
-		(at 189.23 115.57 0)
+		(at 212.09 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12937,7 +12492,7 @@
 		(fields_autoplaced yes)
 		(uuid "0c143696-6724-48e6-9de2-09ec74b384f0")
 		(property "Reference" "BT1"
-			(at 193.04 112.4584 0)
+			(at 215.9 108.6484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12946,7 +12501,7 @@
 			)
 		)
 		(property "Value" "Battery_Cell"
-			(at 193.04 114.9984 0)
+			(at 215.9 111.1884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12955,7 +12510,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 114.046 90)
+			(at 212.09 110.236 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12964,7 +12519,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 189.23 114.046 90)
+			(at 212.09 110.236 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12973,7 +12528,7 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
-			(at 189.23 115.57 0)
+			(at 212.09 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12982,7 +12537,7 @@
 			)
 		)
 		(property "Sim.Device" "V"
-			(at 189.23 115.57 0)
+			(at 212.09 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12991,7 +12546,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 189.23 115.57 0)
+			(at 212.09 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13000,7 +12555,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 189.23 115.57 0)
+			(at 212.09 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13230,7 +12785,7 @@
 	)
 	(symbol
 		(lib_id "2026-09-14_03-29-42:PS1420P02CT")
-		(at 180.34 68.58 270)
+		(at 199.39 50.8 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13239,25 +12794,23 @@
 		(fields_autoplaced yes)
 		(uuid "6173aff9-b8ba-4147-b1dc-9afbca823305")
 		(property "Reference" "LS1"
-			(at 185.42 80.0099 90)
+			(at 186.69 43.18 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "PS1420P02CT"
-			(at 185.42 82.5499 90)
+			(at 186.69 45.72 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "PS1420P02CT_TDK"
-			(at 180.34 68.58 0)
+			(at 199.39 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13267,7 +12820,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.digikey.com/en/products/detail/adafruit-industries-llc/1536/26744063"
-			(at 180.34 68.58 0)
+			(at 199.39 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13277,7 +12830,7 @@
 			)
 		)
 		(property "Description" "Buzzer"
-			(at 180.34 68.58 0)
+			(at 199.39 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13501,74 +13054,6 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N5819")
-		(at 170.18 50.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8cf8e416-109e-4a56-b091-149633bac564")
-		(property "Reference" "D1"
-			(at 169.8625 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N5819"
-			(at 169.8625 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-			(at 170.18 55.245 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
-			(at 170.18 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "40V 1A Schottky Barrier Rectifier Diode, DO-41"
-			(at 170.18 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "838f72ea-1a19-4da9-a34f-7fab7e277da2")
-		)
-		(pin "2"
-			(uuid "46a94d63-302c-47f7-937a-b7e77b142fb3")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -13845,76 +13330,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 179.07 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "be55ef5f-ba3a-454a-bae8-217391d7b27e")
-		(property "Reference" "J1"
-			(at 181.61 48.2599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6V Valve"
-			(at 181.61 50.7999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 179.07 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 179.07 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 179.07 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "011b01ca-0c1e-45d7-9e38-86f8c210d38c")
-		)
-		(pin "2"
-			(uuid "4fba8d02-d170-4cb2-8dd5-eb7267b841f4")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "EE_VEST_SYM:STP55NF06L")
 		(at 166.37 58.42 0)
 		(unit 1)
@@ -14136,73 +13551,6 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+6V")
-		(at 166.37 48.26 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "db25c81b-b090-4799-9c99-5cb2c4d494d6")
-		(property "Reference" "#PWR01"
-			(at 170.18 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+6V"
-			(at 162.56 48.2599 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 166.37 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 166.37 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+6V\""
-			(at 166.37 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5e096c2f-8d25-4b98-9e08-510adc17a420")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "#PWR01")
 					(unit 1)
 				)
 			)
