@@ -1180,208 +1180,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "EE_VEST_SYM:TO-220_3.3V-Reg"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -12.7 6.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "TO-220"
-				(at -12.7 -9.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "LM3940IT-3.3:TO254P1054X470X1955-3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "Texas Instruments"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "1-A, low-dropout voltage regulator for 5-V to 3.3-V conversion 3-TO-220 -40 to 125"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "TO-220-3 Texas Instruments"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/LM3940IT-3.3/Texas+Instruments/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "LM3940IT-3.3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/LM3940IT-3.3/Texas+Instruments/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "TO-220_3.3V-Reg_0_0"
-				(rectangle
-					(start -12.7 -5.08)
-					(end 12.7 5.08)
-					(stroke
-						(width 0.41)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -17.78 2.54 0)
-					(length 5.08)
-					(name "IN"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 17.78 2.54 180)
-					(length 5.08)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 -2.54 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "arduino-library:Arduino_Uno_R4_WiFi_Shield"
 			(pin_names
 				(offset 1.016)
@@ -2675,131 +2473,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3V3"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3V3"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3V3\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3V3_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers
@@ -3028,22 +2701,16 @@
 		)
 	)
 	(junction
-		(at 73.66 121.92)
+		(at 63.5 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4ee294b9-0b4f-4b20-81f4-629cfc6d0eb1")
+		(uuid "0afbd7cc-8a98-4406-9f03-60be05a096fd")
 	)
 	(junction
-		(at 88.9 21.59)
+		(at 63.5 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "57e409e8-5e02-4164-9364-2cb999358957")
-	)
-	(junction
-		(at 96.52 21.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a305edee-941a-42a0-888b-615e82f5f68a")
+		(uuid "a69df016-af97-4828-be7d-54a0525c99c4")
 	)
 	(junction
 		(at 101.6 121.92)
@@ -3051,21 +2718,9 @@
 		(color 0 0 0 0)
 		(uuid "d0bbbbbc-4de6-4f57-923e-87dcd651bc65")
 	)
-	(junction
-		(at 73.66 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d1d7a8ea-5e13-4fc0-bb34-077370fbad45")
-	)
-	(junction
-		(at 96.52 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fe7f9dfc-153b-4d48-9c75-2281167753a2")
-	)
 	(wire
 		(pts
-			(xy 96.52 58.42) (xy 101.6 58.42)
+			(xy 93.98 58.42) (xy 101.6 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3075,7 +2730,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 104.14) (xy 99.06 104.14)
+			(xy 101.6 104.14) (xy 88.9 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3095,7 +2750,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 53.34) (xy 73.66 53.34)
+			(xy 54.61 54.61) (xy 63.5 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3115,27 +2770,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 121.92) (xy 96.52 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29962f91-0a69-458c-aeb9-cd4363a07ac2")
-	)
-	(wire
-		(pts
-			(xy 73.66 68.58) (xy 73.66 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c8e7084-1cf9-43b1-846c-5f0968587628")
-	)
-	(wire
-		(pts
-			(xy 71.12 35.56) (xy 88.9 35.56)
+			(xy 54.61 35.56) (xy 88.9 35.56)
 		)
 		(stroke
 			(width 0)
@@ -3155,7 +2790,17 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 68.58) (xy 73.66 68.58)
+			(xy 63.5 73.66) (xy 63.5 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eefc239-43c8-4123-934f-5164aeb8d9e3")
+	)
+	(wire
+		(pts
+			(xy 54.61 69.85) (xy 63.5 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3165,27 +2810,37 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 68.58) (xy 96.52 121.92)
+			(xy 96.52 48.26) (xy 93.98 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5416a9ca-382a-4a17-9c21-a1b5a4c0900f")
+		(uuid "5ec8d0ba-da6a-4fca-ad66-aac4d4102488")
 	)
 	(wire
 		(pts
-			(xy 96.52 21.59) (xy 101.6 21.59)
+			(xy 101.6 106.68) (xy 96.52 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "66c60660-82a2-4995-af25-199cc24d7668")
+		(uuid "641ec58e-5f38-4677-a2a5-c0016f09392c")
 	)
 	(wire
 		(pts
-			(xy 96.52 55.88) (xy 101.6 55.88)
+			(xy 93.98 73.66) (xy 63.5 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "643e3576-4fb2-464f-b35d-7bbcef0d37a1")
+	)
+	(wire
+		(pts
+			(xy 93.98 55.88) (xy 101.6 55.88)
 		)
 		(stroke
 			(width 0)
@@ -3195,27 +2850,17 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 26.67) (xy 82.55 26.67)
+			(xy 63.5 54.61) (xy 63.5 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "67e7827c-6859-4efa-83d5-b8f3ac4a075f")
+		(uuid "6e6853ad-459e-4929-b783-7db517a0947f")
 	)
 	(wire
 		(pts
-			(xy 73.66 53.34) (xy 73.66 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75936b8d-66ac-4102-993d-96c6affd24f1")
-	)
-	(wire
-		(pts
-			(xy 96.52 63.5) (xy 99.06 63.5)
+			(xy 93.98 63.5) (xy 99.06 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3235,23 +2880,13 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 124.46) (xy 199.39 50.8)
+			(xy 199.39 50.8) (xy 199.39 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "8da6191a-f7c7-459b-895b-2790c33236c8")
-	)
-	(wire
-		(pts
-			(xy 88.9 21.59) (xy 96.52 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fb06553-60f2-4486-b0f1-17bcffc87375")
 	)
 	(wire
 		(pts
@@ -3275,7 +2910,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 104.14) (xy 99.06 124.46)
+			(xy 88.9 104.14) (xy 88.9 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3285,17 +2920,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 26.67) (xy 82.55 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af30897f-7a21-47f1-8e39-b9b15a361efa")
-	)
-	(wire
-		(pts
-			(xy 99.06 124.46) (xy 199.39 124.46)
+			(xy 88.9 138.43) (xy 199.39 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3305,7 +2930,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 48.26) (xy 71.12 35.56)
+			(xy 54.61 49.53) (xy 54.61 35.56)
 		)
 		(stroke
 			(width 0)
@@ -3325,43 +2950,33 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 35.56) (xy 88.9 21.59)
+			(xy 96.52 106.68) (xy 96.52 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c4ea606d-8c6e-48b3-b840-56dfa8e87c96")
+		(uuid "c312c3b5-1d9e-435f-ba54-6ccd9780bb4a")
 	)
 	(wire
 		(pts
-			(xy 96.52 121.92) (xy 101.6 121.92)
+			(xy 63.5 73.66) (xy 63.5 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cf8b6366-3e6b-48c1-9240-81b85fe25c96")
+		(uuid "cab6de9e-fb78-4c5d-9b3d-d0367af0dca8")
 	)
 	(wire
 		(pts
-			(xy 96.52 21.59) (xy 96.52 48.26)
+			(xy 93.98 68.58) (xy 93.98 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d00da8f2-56f0-4f27-a39e-acad800633d1")
-	)
-	(wire
-		(pts
-			(xy 80.01 21.59) (xy 88.9 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb74afe7-c5ba-4689-a0f8-16429acc9d9b")
+		(uuid "de8f310f-2d22-43ec-8ddc-4c17819b68dc")
 	)
 	(wire
 		(pts
@@ -3372,16 +2987,6 @@
 			(type default)
 		)
 		(uuid "f00e20e4-9564-4e41-9237-fdabab66842c")
-	)
-	(wire
-		(pts
-			(xy 43.18 21.59) (xy 44.45 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f07e31d0-1f01-4538-91bb-3d2c779c67e0")
 	)
 	(image
 		(at -59.69 124.46)
@@ -12610,7 +12215,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery_Cell")
-		(at 30.48 30.48 0)
+		(at 71.12 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12619,7 +12224,7 @@
 		(fields_autoplaced yes)
 		(uuid "0c143696-6724-48e6-9de2-09ec74b384f0")
 		(property "Reference" "BT1"
-			(at 34.29 27.3684 0)
+			(at 74.93 102.2984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12628,7 +12233,7 @@
 			)
 		)
 		(property "Value" "Battery_Cell"
-			(at 34.29 29.9084 0)
+			(at 74.93 104.8384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12637,7 +12242,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 28.956 90)
+			(at 71.12 103.886 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12646,7 +12251,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 30.48 28.956 90)
+			(at 71.12 103.886 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12655,7 +12260,7 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
-			(at 30.48 30.48 0)
+			(at 71.12 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12664,7 +12269,7 @@
 			)
 		)
 		(property "Sim.Device" "V"
-			(at 30.48 30.48 0)
+			(at 71.12 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12673,7 +12278,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 30.48 30.48 0)
+			(at 71.12 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12682,7 +12287,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 30.48 30.48 0)
+			(at 71.12 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12706,73 +12311,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 82.55 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2dc8d31c-df4c-48b4-b262-4c78ba676b22")
-		(property "Reference" "#PWR01"
-			(at 82.55 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 82.55 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 82.55 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 82.55 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 82.55 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a6ef99ba-f90b-4718-9493-8d811511b72a")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "EE_VEST_SYM:4554")
-		(at 58.42 58.42 0)
+		(at 41.91 59.69 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12780,7 +12320,7 @@
 		(dnp no)
 		(uuid "3b3ff029-ef31-45b0-9f14-7986b85c8a02")
 		(property "Reference" "U3"
-			(at 58.42 40.64 0)
+			(at 41.91 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12788,7 +12328,7 @@
 			)
 		)
 		(property "Value" "4554"
-			(at 58.42 43.18 0)
+			(at 41.91 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12796,7 +12336,7 @@
 			)
 		)
 		(property "Footprint" "4554:MODULE_4554"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12806,7 +12346,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.digikey.com/en/products/detail/adafruit-industries-llc/4554/17039173"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12815,7 +12355,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12824,7 +12364,7 @@
 			)
 		)
 		(property "PARTREV" "N/A"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12834,7 +12374,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Adafruit"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12844,7 +12384,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "N/A"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12854,7 +12394,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 58.42 58.42 0)
+			(at 41.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12904,73 +12444,6 @@
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U3")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 43.18 21.59 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4431a93a-652a-4750-86b6-6244e04d3431")
-		(property "Reference" "#PWR02"
-			(at 46.99 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 39.37 21.5899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 43.18 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 43.18 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 43.18 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dca22c9e-a7ec-4395-a5e4-07bb7f366d2c")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "#PWR02")
-					(unit 1)
 				)
 			)
 		)
@@ -13046,75 +12519,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 101.6 21.59 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "751e5cbf-743a-4976-a4be-e1b236509c9c")
-		(property "Reference" "#PWR03"
-			(at 97.79 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 105.41 21.5899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 101.6 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b3a1eb4e-ed5c-4d63-be34-cec731398207")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "EE_VEST_SYM:4554")
-		(at 83.82 58.42 0)
+		(at 81.28 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13123,7 +12529,7 @@
 		(fields_autoplaced yes)
 		(uuid "8753ecfc-5684-4054-a17e-2bdab36410f0")
 		(property "Reference" "U3"
-			(at 83.82 40.64 0)
+			(at 81.28 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13131,7 +12537,7 @@
 			)
 		)
 		(property "Value" "4554"
-			(at 83.82 43.18 0)
+			(at 81.28 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13139,7 +12545,7 @@
 			)
 		)
 		(property "Footprint" "4554:MODULE_4554"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13149,7 +12555,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.digikey.com/en/products/detail/adafruit-industries-llc/4554/17039173"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13158,7 +12564,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13167,7 +12573,7 @@
 			)
 		)
 		(property "PARTREV" "N/A"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13177,7 +12583,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Adafruit"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13187,7 +12593,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "N/A"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13197,7 +12603,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 83.82 58.42 0)
+			(at 81.28 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13253,7 +12659,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 73.66 121.92 0)
+		(at 101.6 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13261,7 +12667,7 @@
 		(dnp no)
 		(uuid "aac5dabb-0bb3-41ea-8db5-ad4bb01a37ad")
 		(property "Reference" "#PWR05"
-			(at 73.66 128.27 0)
+			(at 101.6 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13270,7 +12676,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 73.66 125.73 0)
+			(at 101.6 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13278,7 +12684,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 121.92 0)
+			(at 101.6 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13287,7 +12693,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 121.92 0)
+			(at 101.6 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13296,7 +12702,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 73.66 121.92 0)
+			(at 101.6 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13587,6 +12993,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 63.5 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c6d46a0e-92a5-4f9a-aff3-4cf68aae0b30")
+		(property "Reference" "#PWR01"
+			(at 63.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 63.5 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d4c1b261-a7bf-4681-a7c2-f3c52499f050")
+		)
+		(instances
+			(project "FallVest_BDC"
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "EE_VEST_SYM:STP55NF06L")
 		(at 166.37 58.42 0)
 		(unit 1)
@@ -13656,158 +13127,6 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "EE_VEST_SYM:TO-220_3.3V-Reg")
-		(at 62.23 24.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cabd27f3-06d8-4bb0-838b-280c2f786496")
-		(property "Reference" "U2"
-			(at 62.23 13.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TO-220"
-			(at 62.23 16.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LM3940IT-3.3:TO254P1054X470X1955-3"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn.sparkfun.com/assets/e/1/e/7/a/LD1117V33.pdf"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "https://www.digikey.com/en/products/detail/sparkfun-electronics/00526/17828344?s=N4IgTCBcDaIIwFYBsAOAtABgwsS0DkAREAXQF8g"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" "Texas Instruments"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "1-A, low-dropout voltage regulator for 5-V to 3.3-V conversion 3-TO-220 -40 to 125"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "TO-220-3 Texas Instruments"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/LM3940IT-3.3/Texas+Instruments/view-part/?ref=snap"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "LM3940IT-3.3"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/LM3940IT-3.3/Texas+Instruments/view-part/?ref=eda"
-			(at 62.23 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bfee44a7-023c-4d66-992b-6baff4aa7deb")
-		)
-		(pin "2"
-			(uuid "545e7b2c-6c8b-43c2-be29-2e34b708b720")
-		)
-		(pin "3"
-			(uuid "ac8546fc-f08e-4534-92b9-881344d779d4")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "U2")
 					(unit 1)
 				)
 			)
