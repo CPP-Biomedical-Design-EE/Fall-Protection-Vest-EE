@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "arduino-library")(type "KiCad")(uri "${KIPRJMOD}/arduino-library.kicad_sym")(options "")(descr ""))
-  (lib (name "NEO-6M")(type "KiCad")(uri "${KIPRJMOD}/NEO-6M.kicad_sym")(options "")(descr ""))
-)
