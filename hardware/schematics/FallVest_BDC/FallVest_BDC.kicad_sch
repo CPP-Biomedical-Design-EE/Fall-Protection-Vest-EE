@@ -2935,10 +2935,22 @@
 		)
 	)
 	(junction
+		(at 124.46 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "328fb611-b03d-4606-81a7-e91dc54e1b97")
+	)
+	(junction
 		(at 129.54 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3faff801-a5d1-4dcb-b29b-d1675a36a492")
+	)
+	(junction
+		(at 99.06 34.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5c403eb9-5192-4669-af2f-e811da325a43")
 	)
 	(junction
 		(at 99.06 113.03)
@@ -3020,7 +3032,17 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 113.03) (xy 99.06 113.03)
+			(xy 99.06 26.67) (xy 99.06 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11770fb2-6509-4db1-9659-a635ece83539")
+	)
+	(wire
+		(pts
+			(xy 157.48 113.03) (xy 124.46 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3037,6 +3059,16 @@
 			(type default)
 		)
 		(uuid "2460c9f7-7c93-4c13-87c7-76ccbc6d4fa3")
+	)
+	(wire
+		(pts
+			(xy 124.46 59.69) (xy 121.92 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2570998e-2d4b-417f-a86f-aa598410292a")
 	)
 	(wire
 		(pts
@@ -3070,6 +3102,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 113.03) (xy 99.06 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597f8893-9f50-4020-844c-edc2d10d91f3")
+	)
+	(wire
+		(pts
 			(xy 149.86 106.68) (xy 129.54 106.68)
 		)
 		(stroke
@@ -3077,6 +3119,16 @@
 			(type default)
 		)
 		(uuid "67ef8f62-1856-4772-b243-e17dce03eac2")
+	)
+	(wire
+		(pts
+			(xy 121.92 59.69) (xy 121.92 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a6ee785-4a28-45c4-99d3-842734b47e45")
 	)
 	(wire
 		(pts
@@ -3127,6 +3179,16 @@
 			(type default)
 		)
 		(uuid "cfd6588c-4050-43a0-baa8-7ca654b8b227")
+	)
+	(wire
+		(pts
+			(xy 124.46 85.09) (xy 124.46 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2275696-1008-4438-8348-831f90c7af42")
 	)
 	(wire
 		(pts
@@ -3187,6 +3249,16 @@
 			(type default)
 		)
 		(uuid "f82659a3-c5db-41ad-bd8f-453ab4c527d1")
+	)
+	(wire
+		(pts
+			(xy 121.92 26.67) (xy 99.06 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbf506b4-682e-420f-b757-9ad5e705d708")
 	)
 	(image
 		(at -59.69 124.46)
