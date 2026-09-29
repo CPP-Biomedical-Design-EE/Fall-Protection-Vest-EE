@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "sim800l-core")(type "KiCad")(uri "${KIPRJMOD}/sim800l-core.kicad_sym")(options "")(descr ""))
+)
