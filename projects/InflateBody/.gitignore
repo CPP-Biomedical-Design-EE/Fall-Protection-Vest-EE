@@ -1,4 +1,7 @@
-Python/Data/
+Python/Data/*
+!Python/Data/fall_feature_summary.csv
+!Python/Data/sample_recordings/
+!Python/Data/sample_recordings/**
 Python/Graphs/
 Python/__pycache__/
 Python/Models/*
