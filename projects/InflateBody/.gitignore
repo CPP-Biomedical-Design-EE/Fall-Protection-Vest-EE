@@ -1,0 +1,8 @@
+Python/Data/
+Python/Graphs/
+Python/__pycache__/
+Python/Models/*
+!Python/Models/combined_kfall_local_fall_detector.joblib
+!Python/Models/combined_kfall_local_fall_detector_metrics.json
+*.csv
+*.png
