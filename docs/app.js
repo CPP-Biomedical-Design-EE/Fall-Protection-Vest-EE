@@ -9,7 +9,7 @@ const FIELDS = [
 const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
-  "subject", "label", "event-class", "duration", "connect", "stop", "csv", "png",
+  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "connect", "stop", "csv", "png",
   "status", "samples", "elapsed", "rate", "gaps", "total", "graph", "hover"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
@@ -36,6 +36,40 @@ function setStatus(message, error = false) {
 
 function validLabel(value) {
   return /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(value);
+}
+
+function updateSavedLabels() {
+  if (running || !rows.length || !session) return;
+  const valid = validLabel(els.label.value.trim());
+  els.csv.disabled = !valid;
+  els.png.disabled = !valid;
+  if (!valid) return;
+  session.label = els.label.value.trim();
+  session.eventClass = els["event-class"].value;
+  for (const row of rows) {
+    row.label = session.label;
+    row.event_class = session.eventClass;
+  }
+}
+
+function selectActivity() {
+  const label = els.activity.value;
+  const custom = label === "custom";
+  els.label.readOnly = !custom;
+  els["event-class"].disabled = running || !custom;
+  if (!custom) {
+    els.label.value = label;
+    els["event-class"].value = label.split("_")[0];
+  } else {
+    els.label.value = "";
+    els.label.focus();
+  }
+  els["activity-guidance"].textContent = label.startsWith("fall_")
+    ? "Use this label only for an actual confirmed fall under an approved, supervised protocol. Do not deliberately create an unsafe fall."
+    : custom
+      ? "Enter a short label, then choose its event class. Use letters, numbers, underscores or hyphens."
+      : "Choose the action actually performed. You can correct the selection after recording, before downloading the CSV.";
+  updateSavedLabels();
 }
 
 function csvCell(value) {
@@ -244,7 +278,8 @@ async function readSerial() {
     els.stop.disabled = true;
     els.csv.disabled = rows.length === 0;
     els.png.disabled = rows.length === 0;
-    [els.subject, els.label, els["event-class"], els.duration].forEach(element => { element.disabled = false; });
+    [els.subject, els.activity, els.label, els.duration].forEach(element => { element.disabled = false; });
+    els["event-class"].disabled = els.activity.value !== "custom";
     if (!els.status.classList.contains("error")) {
       const seconds = rows.length ? rows.at(-1).elapsed : 0;
       const hz = intervals.length ? intervals.length / intervals.reduce((sum, value) => sum + value, 0) : 0;
@@ -277,7 +312,7 @@ async function connect() {
     els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
     els.csv.disabled = true; els.png.disabled = true;
     els.connect.disabled = true; els.stop.disabled = false;
-    [els.subject, els.label, els["event-class"], els.duration].forEach(element => { element.disabled = true; });
+    [els.subject, els.activity, els.label, els["event-class"], els.duration].forEach(element => { element.disabled = true; });
     running = true;
     setStatus("Connected. Waiting for the first timestamped sensor sample…");
     drawGraph();
@@ -310,6 +345,9 @@ function filename(suffix) {
 
 els.connect.addEventListener("click", connect);
 els.stop.addEventListener("click", () => { void stopCapture(); });
+els.activity.addEventListener("change", selectActivity);
+els.label.addEventListener("change", updateSavedLabels);
+els["event-class"].addEventListener("change", updateSavedLabels);
 els.csv.addEventListener("click", () => {
   if (!rows.length) return;
   const data = [FIELDS.join(","), ...rows.map(row => FIELDS.map(key => csvCell(row[key])).join(","))].join("\r\n") + "\r\n";
@@ -338,4 +376,5 @@ canvas.addEventListener("mouseleave", () => { hoverX = null; drawGraph(); });
 if (!("serial" in navigator)) {
   setStatus("Open this HTTPS page in Chrome or Edge on a desktop computer to connect the ESP32.", true);
 }
+selectActivity();
 drawGraph();
