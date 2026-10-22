@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InflateBody | Live sensor test</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, sans-serif; color: #172b3a; background: #f4f7f8; }
+    body { max-width: 1160px; margin: 0 auto; padding: 28px 20px 50px; }
+    h1 { margin: 0 0 4px; font-size: 1.7rem; }
+    p { line-height: 1.5; }
+    .muted { color: #526674; }
+    .card { background: white; border: 1px solid #d8e2e7; border-radius: 12px; padding: 20px; margin-top: 18px; }
+    .fields { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; }
+    label { display: grid; gap: 5px; font-weight: 600; font-size: .9rem; }
+    input, select { box-sizing: border-box; min-height: 39px; padding: 7px 9px; border: 1px solid #b9cbd3; border-radius: 6px; font: inherit; background: white; }
+    input[type="text"] { min-width: 150px; }
+    input[type="number"] { width: 100px; }
+    button { border: 0; border-radius: 7px; padding: 10px 15px; background: #0c6691; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    button.secondary { background: #425e70; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
+    .stat { background: #edf4f7; border-radius: 7px; padding: 8px 11px; min-width: 120px; }
+    .stat b { display: block; font-size: 1.1rem; }
+    #status { margin-top: 12px; min-height: 1.5em; font-weight: 600; }
+    #status.error { color: #a62424; }
+    canvas { width: 100%; height: auto; display: block; border: 1px solid #d8e2e7; border-radius: 8px; cursor: crosshair; }
+    #hover { min-height: 4.5em; margin-top: 10px; font-size: .9rem; white-space: pre-line; }
+    .note { font-size: .88rem; color: #526674; }
+  </style>
+</head>
+<body>
+  <h1>InflateBody live sensor test</h1>
+  <p class="muted">Connect the existing USB ESP32 and record six-axis lower-back data. Readings stay in this browser until you download the CSV or graph.</p>
+  <section class="card" aria-label="Recording controls">
+    <div class="fields">
+      <label>Participant ID <input id="subject" type="text" value="P02" maxlength="64" autocomplete="off"></label>
+      <label>Activity label <input id="label" type="text" value="adl_T01_standing" maxlength="64" autocomplete="off"></label>
+      <label>Event class <select id="event-class"><option value="adl">Daily activity</option><option value="prefall">Recovered balance</option><option value="noimpact">No confirmed impact</option><option value="fall">Confirmed fall</option><option value="calibration">Calibration</option></select></label>
+      <label>Duration (seconds) <input id="duration" type="number" min="1" max="600" step="1" value="30"></label>
+    </div>
+    <div class="actions">
+      <button id="connect">Connect and record</button>
+      <button id="stop" class="secondary" disabled>Stop</button>
+      <button id="csv" class="secondary" disabled>Download CSV</button>
+      <button id="png" class="secondary" disabled>Download graph PNG</button>
+    </div>
+    <div id="status" role="status" aria-live="polite">Ready. Use Chrome or Edge on a desktop computer.</div>
+    <div class="stats">
+      <div class="stat">Samples <b id="samples">0</b></div>
+      <div class="stat">Elapsed <b id="elapsed">0.0 s</b></div>
+      <div class="stat">Device rate <b id="rate">—</b></div>
+      <div class="stat">Sequence gaps <b id="gaps">0</b></div>
+      <div class="stat">Total acceleration <b id="total">—</b></div>
+    </div>
+  </section>
+  <section class="card">
+    <canvas id="graph" width="1160" height="760" aria-label="Acceleration, angular velocity, total acceleration, and estimated angles"></canvas>
+    <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
+  </section>
+  <p class="note">Chrome or Edge desktop + USB data cable required. Close Arduino Serial Monitor first. The ESP32 must already run the timestamped 100 Hz firmware. This page records and graphs sensor data; it does not classify falls or control an actuator. Collect participant data only with their consent.</p>
+  <script src="app.js"></script>
+</body>
+</html>
