@@ -53,6 +53,13 @@
           <option value="adl_T11_sitting_chair">T11 · Sit in a chair</option>
           <option value="adl_T12_sitting_sofa">T12 · Sit on a sofa</option>
           <option value="adl_T13_chair_normal">T13 · Normal chair movement</option>
+          <option value="adl_T15_collapse_into_chair">T15 · Collapse into chair</option>
+          <option value="adl_T16_sofa_transition">T16 · Sofa transition</option>
+          <option value="adl_T17_lying_bed">T17 · Lie on bed</option>
+          <option value="adl_T18_bed_normal">T18 · Normal bed movement</option>
+          <option value="adl_T19_bed_fast">T19 · Fast bed movement</option>
+          <option value="adl_T35_stairs_normal">T35 · Use stairs normally</option>
+          <option value="adl_T36_stairs_fast">T36 · Use stairs quickly</option>
         </optgroup>
         <optgroup label="Recovered balance / near-fall — record only what happened">
           <option value="prefall_T50_recovered_balance">T50 · Near-fall: lost balance, recovered</option>
@@ -64,13 +71,27 @@
           <option value="prefall_T56_nearfall_trip_step_recovery">T56 · Near-fall: trip-step recovery</option>
           <option value="prefall_T57_nearfall_slip_step_recovery">T57 · Near-fall: slip-step recovery</option>
         </optgroup>
-        <optgroup label="Confirmed falls — approved protocol only">
-          <option value="fall_T34_walking_slip_backward">T34 · Confirmed backward-slip fall</option>
+        <optgroup label="Fall trials — approved, supervised protocol only">
+          <option value="fall_T20_forward_sitting_down">T20 · Forward fall while sitting down</option>
+          <option value="fall_T21_backward_sitting_down">T21 · Backward fall while sitting down</option>
+          <option value="fall_T22_lateral_sitting_down">T22 · Side fall while sitting down</option>
+          <option value="fall_T23_forward_getting_up">T23 · Forward fall while getting up</option>
+          <option value="fall_T24_lateral_getting_up">T24 · Side fall while getting up</option>
+          <option value="fall_T25_seated_faint_forward">T25 · Forward fall from seated faint</option>
+          <option value="fall_T26_seated_faint_lateral">T26 · Side fall from seated faint</option>
+          <option value="fall_T27_seated_faint_backward">T27 · Backward fall from seated faint</option>
+          <option value="fall_T28_walking_faint_forward">T28 · Forward fall from walking faint</option>
+          <option value="fall_T29_walking_faint_hand_support">T29 · Walking faint with hand support</option>
+          <option value="fall_T30_walking_trip_forward">T30 · Forward walking trip</option>
+          <option value="fall_T31_jogging_trip_forward">T31 · Forward jogging trip</option>
+          <option value="fall_T32_walking_slip_forward">T32 · Forward walking slip</option>
+          <option value="fall_T33_walking_slip_lateral">T33 · Side walking slip</option>
+          <option value="fall_T34_walking_slip_backward">T34 · Backward walking slip</option>
         </optgroup>
         <option value="custom">Other action — enter a label</option>
       </select></label>
       <label>Saved label <input id="label" type="text" value="adl_T01_standing" maxlength="64" autocomplete="off" readonly></label>
-      <label>Event class <select id="event-class" disabled><option value="adl">Daily activity</option><option value="prefall">Recovered balance</option><option value="noimpact">No confirmed impact</option><option value="fall">Confirmed fall</option><option value="calibration">Calibration</option></select></label>
+      <label>Event class <select id="event-class" disabled><option value="adl">Daily activity</option><option value="prefall">Recovered balance</option><option value="noimpact">No confirmed impact</option><option value="fall">Fall-labeled trial</option><option value="calibration">Calibration</option></select></label>
       <label>Duration (seconds) <input id="duration" type="number" min="1" max="600" step="1" value="30"></label>
     </div>
     <p id="activity-guidance" class="note">Choose the action actually performed. Record recovered balance only when it occurred; do not deliberately create unsafe slips or falls.</p>
@@ -97,6 +118,6 @@
     <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
   </section>
   <p class="note">Chrome or Edge desktop + USB data cable required.</p>
-  <script src="app.js?v=20261024-reset1"></script>
+  <script src="app.js?v=20261024-actions2"></script>
 </body>
 </html>

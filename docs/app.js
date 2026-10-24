@@ -86,7 +86,7 @@ function selectActivity() {
     els.label.focus();
   }
   els["activity-guidance"].textContent = label.startsWith("fall_")
-    ? "Use this label only for an actual confirmed fall under an approved, supervised protocol. Do not deliberately create an unsafe fall."
+    ? "Use this label only for a supervised fall trial. Confirm the actual outcome separately; do not deliberately create an unsafe fall."
     : custom
       ? "Enter a short label, then choose its event class. Use letters, numbers, underscores or hyphens."
       : label.startsWith("prefall_")
