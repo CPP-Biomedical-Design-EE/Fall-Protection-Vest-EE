@@ -9,7 +9,7 @@ const FIELDS = [
 const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
-  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "connect", "stop", "csv", "png",
+  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "csv", "png",
   "status", "samples", "elapsed", "rate", "gaps", "total", "graph", "hover"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
@@ -28,6 +28,7 @@ let lastDrawMs = 0;
 let showAll = false;
 let hoverX = null;
 let session = null;
+let saveFolder = null;
 
 function setStatus(message, error = false) {
   els.status.textContent = message;
@@ -39,7 +40,7 @@ function validLabel(value) {
 }
 
 function updateSavedLabels() {
-  if (running || !rows.length || !session) return;
+  if (running || !rows.length || !session || session.autoSaved) return;
   const valid = validLabel(els.label.value.trim());
   els.csv.disabled = !valid;
   els.png.disabled = !valid;
@@ -49,6 +50,26 @@ function updateSavedLabels() {
   for (const row of rows) {
     row.label = session.label;
     row.event_class = session.eventClass;
+  }
+}
+
+function updateFolderStatus() {
+  els["folder-status"].textContent = saveFolder
+    ? `Automatic save: ${saveFolder.name}/${els.subject.value.trim() || "participant"}/${els.label.value.trim() || "action"}/ (CSV + PNG after Stop or duration). Choose the folder again after reloading this page.`
+    : "No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.";
+}
+
+async function chooseSaveFolder() {
+  if (typeof window.showDirectoryPicker !== "function") {
+    setStatus("Automatic folders require Chrome or Edge on a desktop computer. Download the CSV and graph manually instead.", true);
+    return;
+  }
+  try {
+    saveFolder = await window.showDirectoryPicker({ id: "inflatebody-recordings", mode: "readwrite" });
+    updateFolderStatus();
+    setStatus(`Save folder selected: ${saveFolder.name}. Each completed recording will save automatically.`);
+  } catch (error) {
+    if (error.name !== "AbortError") setStatus(`Could not use save folder: ${error.message}`, true);
   }
 }
 
@@ -68,8 +89,11 @@ function selectActivity() {
     ? "Use this label only for an actual confirmed fall under an approved, supervised protocol. Do not deliberately create an unsafe fall."
     : custom
       ? "Enter a short label, then choose its event class. Use letters, numbers, underscores or hyphens."
-      : "Choose the action actually performed. You can correct the selection after recording, before downloading the CSV.";
+      : label.startsWith("prefall_")
+        ? "Near-fall means balance was lost and recovered, without ground impact. Do not deliberately create unsafe slips or falls."
+        : "Choose the action actually performed before recording. Automatic files use that action's folder.";
   updateSavedLabels();
+  updateFolderStatus();
 }
 
 function csvCell(value) {
@@ -273,20 +297,32 @@ async function readSerial() {
     try { if (port) await port.close(); } catch { /* Browser may close an unplugged port. */ }
     port = null;
     showAll = true;
+    hoverX = null;
     drawGraph();
+    const priorError = els.status.classList.contains("error") ? `${els.status.textContent} ` : "";
+    let saveMessage = rows.length ? "Download the CSV and graph to save this session." : "No samples to save.";
+    let saveError = false;
+    if (rows.length && session?.saveFolder) {
+      setStatus(`${priorError}Recording stopped. Saving CSV and graph…`, !!priorError);
+      try {
+        const savedPath = await saveSessionToFolder();
+        saveMessage = `Saved CSV and graph in ${savedPath}.`;
+      } catch (error) {
+        saveError = true;
+        saveMessage = `Automatic save failed: ${error.message}. Use the download buttons now; a partial file may exist in the chosen folder.`;
+      }
+    }
+    const seconds = rows.length ? rows.at(-1).elapsed : 0;
+    const hz = intervals.length ? intervals.length / intervals.reduce((sum, value) => sum + value, 0) : 0;
+    const quality = rows.length >= 101 && gapCount === 0 && hz >= 95 && hz <= 105
+      ? "100 Hz timing check passed" : "100 Hz timing not verified";
+    setStatus(`${priorError}Stopped: ${rows.length} samples, ${seconds.toFixed(1)} s. ${quality}. ${saveMessage}`, !!priorError || saveError);
     els.connect.disabled = false;
     els.stop.disabled = true;
     els.csv.disabled = rows.length === 0;
     els.png.disabled = rows.length === 0;
-    [els.subject, els.activity, els.label, els.duration].forEach(element => { element.disabled = false; });
+    [els.subject, els.activity, els.label, els.duration, els.folder].forEach(element => { element.disabled = false; });
     els["event-class"].disabled = els.activity.value !== "custom";
-    if (!els.status.classList.contains("error")) {
-      const seconds = rows.length ? rows.at(-1).elapsed : 0;
-      const hz = intervals.length ? intervals.length / intervals.reduce((sum, value) => sum + value, 0) : 0;
-      const quality = rows.length >= 101 && gapCount === 0 && hz >= 95 && hz <= 105
-        ? "100 Hz timing check passed" : "100 Hz timing not verified";
-      setStatus(`Stopped: ${rows.length} samples, ${seconds.toFixed(1)} s. ${quality}. Download the CSV to save this session.`);
-    }
   }
 }
 
@@ -305,14 +341,18 @@ async function connect() {
   try {
     port = await navigator.serial.requestPort();
     await port.open({ baudRate: 115200 });
-    session = { subject, label, eventClass: els["event-class"].value, duration };
+    session = {
+      subject, label, eventClass: els["event-class"].value, duration, saveFolder,
+      startedAt: new Date().toISOString().replace(/[-:.]/g, ""),
+      nonce: Math.random().toString(36).slice(2, 8), autoSaved: false
+    };
     rows = []; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
     intervals = []; firstHostMs = null; showAll = false; hoverX = null;
     els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
     els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
     els.csv.disabled = true; els.png.disabled = true;
     els.connect.disabled = true; els.stop.disabled = false;
-    [els.subject, els.activity, els.label, els["event-class"], els.duration].forEach(element => { element.disabled = true; });
+    [els.subject, els.activity, els.label, els["event-class"], els.duration, els.folder].forEach(element => { element.disabled = true; });
     running = true;
     setStatus("Connected. Waiting for the first timestamped sensor sample…");
     drawGraph();
@@ -338,25 +378,59 @@ function downloadBlob(blob, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-function filename(suffix) {
-  const stamp = new Date().toISOString().replace(/[-:.]/g, "").slice(0, 15);
-  return `${session.label}_${session.subject}_lower_back_center_waist_${stamp}_${suffix}`;
+function csvData() {
+  return [FIELDS.join(","), ...rows.map(row => FIELDS.map(key => csvCell(row[key])).join(","))].join("\r\n") + "\r\n";
 }
 
+function graphBlob() {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("Could not export the graph")), "image/png");
+  });
+}
+
+async function writeFile(directory, name, contents) {
+  const handle = await directory.getFileHandle(name, { create: true });
+  const writable = await handle.createWritable();
+  try {
+    await writable.write(contents);
+    await writable.close();
+  } catch (error) {
+    try { await writable.abort(); } catch { /* Keep the original error. */ }
+    throw error;
+  }
+}
+
+async function saveSessionToFolder() {
+  const participant = await session.saveFolder.getDirectoryHandle(session.subject, { create: true });
+  const action = await participant.getDirectoryHandle(session.label, { create: true });
+  const base = `${session.label}_lower_back_center_waist_${session.startedAt}_${session.nonce}`;
+  await writeFile(action, `${base}.csv`, csvData());
+  const image = await graphBlob();
+  await writeFile(action, `${base}.png`, image);
+  session.autoSaved = true;
+  return `${session.saveFolder.name}/${session.subject}/${session.label}/`;
+}
+
+function filename(suffix) {
+  return `${session.label}_${session.subject}_lower_back_center_waist_${session.startedAt}_${session.nonce}_${suffix}`;
+}
+
+els.folder.addEventListener("click", () => { void chooseSaveFolder(); });
 els.connect.addEventListener("click", connect);
 els.stop.addEventListener("click", () => { void stopCapture(); });
 els.activity.addEventListener("change", selectActivity);
+els.subject.addEventListener("input", updateFolderStatus);
 els.label.addEventListener("change", updateSavedLabels);
 els["event-class"].addEventListener("change", updateSavedLabels);
 els.csv.addEventListener("click", () => {
   if (!rows.length) return;
-  const data = [FIELDS.join(","), ...rows.map(row => FIELDS.map(key => csvCell(row[key])).join(","))].join("\r\n") + "\r\n";
-  downloadBlob(new Blob([data], { type: "text/csv;charset=utf-8" }), filename("raw.csv"));
+  downloadBlob(new Blob([csvData()], { type: "text/csv;charset=utf-8" }), filename("raw.csv"));
 });
 els.png.addEventListener("click", () => {
   if (!rows.length) return;
   drawGraph();
-  canvas.toBlob(blob => { if (blob) downloadBlob(blob, filename("graph.png")); });
+  void graphBlob().then(blob => downloadBlob(blob, filename("graph.png")))
+    .catch(error => setStatus(`Graph download failed: ${error.message}`, true));
 });
 canvas.addEventListener("mousemove", event => {
   if (!rows.length) return;
@@ -376,5 +450,6 @@ canvas.addEventListener("mouseleave", () => { hoverX = null; drawGraph(); });
 if (!("serial" in navigator)) {
   setStatus("Open this HTTPS page in Chrome or Edge on a desktop computer to connect the ESP32.", true);
 }
+if (typeof window.showDirectoryPicker !== "function") els.folder.disabled = true;
 selectActivity();
 drawGraph();
