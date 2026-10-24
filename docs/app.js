@@ -9,7 +9,7 @@ const FIELDS = [
 const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
-  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "csv", "png",
+  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "reset", "csv", "png",
   "status", "samples", "elapsed", "rate", "gaps", "total", "graph", "hover"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
@@ -319,6 +319,7 @@ async function readSerial() {
     setStatus(`${priorError}Stopped: ${rows.length} samples, ${seconds.toFixed(1)} s. ${quality}. ${saveMessage}`, !!priorError || saveError);
     els.connect.disabled = false;
     els.stop.disabled = true;
+    els.reset.disabled = rows.length === 0;
     els.csv.disabled = rows.length === 0;
     els.png.disabled = rows.length === 0;
     [els.subject, els.activity, els.label, els.duration, els.folder].forEach(element => { element.disabled = false; });
@@ -350,7 +351,7 @@ async function connect() {
     intervals = []; firstHostMs = null; showAll = false; hoverX = null;
     els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
     els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
-    els.csv.disabled = true; els.png.disabled = true;
+    els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
     els.connect.disabled = true; els.stop.disabled = false;
     [els.subject, els.activity, els.label, els["event-class"], els.duration, els.folder].forEach(element => { element.disabled = true; });
     running = true;
@@ -367,6 +368,20 @@ async function stopCapture() {
   if (!running) return;
   running = false;
   if (reader) { try { await reader.cancel(); } catch { /* Read loop will close the port. */ } }
+}
+
+function resetSession() {
+  if (running || els.reset.disabled) return;
+  if (rows.length && !session?.autoSaved &&
+      !window.confirm("Reset this test? This clears its graph and readings from the page. Save the CSV and graph first if you need them.")) return;
+  rows = []; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+  intervals = []; firstHostMs = null; showAll = false; hoverX = null;
+  els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
+  els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
+  els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
+  els.hover.textContent = "Move the mouse over the graph to inspect a saved sample.";
+  setStatus("Ready for a new test. Choose an action, then click Connect and record.");
+  drawGraph();
 }
 
 function downloadBlob(blob, filename) {
@@ -418,6 +433,7 @@ function filename(suffix) {
 els.folder.addEventListener("click", () => { void chooseSaveFolder(); });
 els.connect.addEventListener("click", connect);
 els.stop.addEventListener("click", () => { void stopCapture(); });
+els.reset.addEventListener("click", resetSession);
 els.activity.addEventListener("change", selectActivity);
 els.subject.addEventListener("input", updateFolderStatus);
 els.label.addEventListener("change", updateSavedLabels);
