@@ -16,6 +16,8 @@
     input, select { box-sizing: border-box; min-height: 39px; padding: 7px 9px; border: 1px solid #b9cbd3; border-radius: 6px; font: inherit; background: white; }
     input[type="text"] { min-width: 150px; }
     input[type="number"] { width: 100px; }
+    #activity { min-width: min(100%, 330px); }
+    input[readonly] { background: #f1f5f7; color: #425e70; }
     button { border: 0; border-radius: 7px; padding: 10px 15px; background: #0c6691; color: white; font: inherit; font-weight: 650; cursor: pointer; }
     button:disabled { opacity: .45; cursor: not-allowed; }
     button.secondary { background: #425e70; }
@@ -32,20 +34,54 @@
 </head>
 <body>
   <h1>InflateBody live sensor test</h1>
-  <p class="muted">Connect the existing USB ESP32 and record six-axis lower-back data. Readings stay in this browser until you download the CSV or graph.</p>
+  <p class="muted">Connect the existing USB ESP32 and record six-axis lower-back data. Choose a save folder once to save each CSV and graph automatically on this computer.</p>
   <section class="card" aria-label="Recording controls">
     <div class="fields">
-      <label>Participant ID <input id="subject" type="text" value="P02" maxlength="64" autocomplete="off"></label>
-      <label>Activity label <input id="label" type="text" value="adl_T01_standing" maxlength="64" autocomplete="off"></label>
-      <label>Event class <select id="event-class"><option value="adl">Daily activity</option><option value="prefall">Recovered balance</option><option value="noimpact">No confirmed impact</option><option value="fall">Confirmed fall</option><option value="calibration">Calibration</option></select></label>
+      <label>Participant ID <input id="subject" type="text" placeholder="e.g. P02" maxlength="64" autocomplete="off"></label>
+      <label>Action <select id="activity">
+        <optgroup label="Daily activities">
+          <option value="adl_T01_standing">T01 · Standing still</option>
+          <option value="adl_T02_tie_shoes">T02 · Bend to tie shoes</option>
+          <option value="adl_T03_pick_up_object">T03 · Pick up a floor object</option>
+          <option value="adl_T04_jump">T04 · Small jump</option>
+          <option value="adl_T05_floor_sit_stand">T05 · Sit on floor, then stand</option>
+          <option value="adl_T06_walk_normal">T06 · Walk normally</option>
+          <option value="adl_T07_walk_fast">T07 · Walk fast</option>
+          <option value="adl_T08_jog_normal">T08 · Jog normally</option>
+          <option value="adl_T09_jog_fast">T09 · Jog fast</option>
+          <option value="adl_T10_stumble">T10 · Stumble without falling</option>
+          <option value="adl_T11_sitting_chair">T11 · Sit in a chair</option>
+          <option value="adl_T12_sitting_sofa">T12 · Sit on a sofa</option>
+          <option value="adl_T13_chair_normal">T13 · Normal chair movement</option>
+        </optgroup>
+        <optgroup label="Recovered balance / near-fall — record only what happened">
+          <option value="prefall_T50_recovered_balance">T50 · Near-fall: lost balance, recovered</option>
+          <option value="noimpact_T51_stumble_recovered">T51 · Stumbled, recovered; no impact</option>
+          <option value="prefall_T52_nearfall_forward_recovery">T52 · Near-fall: forward recovery</option>
+          <option value="prefall_T53_nearfall_backward_recovery">T53 · Near-fall: backward recovery</option>
+          <option value="prefall_T54_nearfall_left_recovery">T54 · Near-fall: left recovery</option>
+          <option value="prefall_T55_nearfall_right_recovery">T55 · Near-fall: right recovery</option>
+          <option value="prefall_T56_nearfall_trip_step_recovery">T56 · Near-fall: trip-step recovery</option>
+          <option value="prefall_T57_nearfall_slip_step_recovery">T57 · Near-fall: slip-step recovery</option>
+        </optgroup>
+        <optgroup label="Confirmed falls — approved protocol only">
+          <option value="fall_T34_walking_slip_backward">T34 · Confirmed backward-slip fall</option>
+        </optgroup>
+        <option value="custom">Other action — enter a label</option>
+      </select></label>
+      <label>Saved label <input id="label" type="text" value="adl_T01_standing" maxlength="64" autocomplete="off" readonly></label>
+      <label>Event class <select id="event-class" disabled><option value="adl">Daily activity</option><option value="prefall">Recovered balance</option><option value="noimpact">No confirmed impact</option><option value="fall">Confirmed fall</option><option value="calibration">Calibration</option></select></label>
       <label>Duration (seconds) <input id="duration" type="number" min="1" max="600" step="1" value="30"></label>
     </div>
+    <p id="activity-guidance" class="note">Choose the action actually performed. Record recovered balance only when it occurred; do not deliberately create unsafe slips or falls.</p>
     <div class="actions">
+      <button id="folder" class="secondary">Choose save folder</button>
       <button id="connect">Connect and record</button>
       <button id="stop" class="secondary" disabled>Stop</button>
-      <button id="csv" class="secondary" disabled>Download CSV</button>
-      <button id="png" class="secondary" disabled>Download graph PNG</button>
+      <button id="csv" class="secondary" disabled>Download last CSV</button>
+      <button id="png" class="secondary" disabled>Download last graph PNG</button>
     </div>
+    <p id="folder-status" class="note">No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.</p>
     <div id="status" role="status" aria-live="polite">Ready. Use Chrome or Edge on a desktop computer.</div>
     <div class="stats">
       <div class="stat">Samples <b id="samples">0</b></div>
@@ -59,7 +95,7 @@
     <canvas id="graph" width="1160" height="760" aria-label="Acceleration, angular velocity, total acceleration, and estimated angles"></canvas>
     <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
   </section>
-  <p class="note">Chrome or Edge desktop + USB data cable required. Close Arduino Serial Monitor first. The ESP32 must already run the timestamped 100 Hz firmware. This page records and graphs sensor data; it does not classify falls or control an actuator. Collect participant data only with their consent.</p>
-  <script src="app.js"></script>
+  <p class="note">Chrome or Edge desktop + USB data cable required. Close Arduino Serial Monitor first. The ESP32 must already run the timestamped 100 Hz firmware. Choose a local folder with enough free space. Use anonymous participant IDs. Do not intentionally create unsafe slips or falls. This page records and graphs sensor data; it does not classify falls or control an actuator. Collect participant data only with their consent.</p>
+  <script src="app.js?v=20261023-autosave1"></script>
 </body>
 </html>
