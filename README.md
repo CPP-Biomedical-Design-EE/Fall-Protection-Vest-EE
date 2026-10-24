@@ -10,7 +10,7 @@ Build and test the sensing, electronics, fall-detection, power, and trigger-cont
 
 These are the EE team's current working choices, not requirements stated by the slides:
 
-- **MCU platform:** Arduino Uno R4. The exact board and chip are still to be selected and recorded in [`docs/decisions/`](docs/decisions/).
+- **MCU platform:** ESP32. The exact board and chip are still to be selected and recorded in [`docs/decisions/`](docs/decisions/).
 - **Firmware:** ArduinoIDE
 - **Algorithm and data analysis:** Python and Jupyter
 - **Schematic and PCB design:** KiCad
@@ -23,7 +23,7 @@ The team should compare candidate boards and IMUs before adding an exact part nu
 ## Team roles
 
 - **EE Lead / Integration:** coordinates the EE team, tracks interfaces, and makes sure the subsystems work together
-- **Firmware / MCU:** sets up STM32CubeIDE, reads the IMU, handles timing and communication, and keeps the safe test output inactive by default
+- **Firmware / MCU:** sets up Arduino IDE, reads the IMU, handles timing and communication, and keeps the safe test output inactive by default
 - **Algorithm / Data:** collects movement data, analyzes it in Python/Jupyter, develops the SVM logic, and checks false positives
 - **Power / Circuits:** plans the battery, voltage rails, protection, power budget, and safe output-driver circuit
 - **PCB / Hardware:** creates KiCad schematics, breadboard layouts, wiring records, connectors, and PCB files
@@ -63,7 +63,7 @@ These dates and deliverables come from the uploaded **BDC Fall 2026 Schedule**.
 
 ## Current next steps
 
-1. Confirm the exact Arduino Uno R4 development board and document the decision.
+1. Confirm the exact ESP32 development board and document the decision.
 2. Compare IMU candidates against the project requirements before selecting one.
 3. Create the Arduino Uno R4 firmware project and confirm basic serial output.
 4. Read tri-axial acceleration and angular velocity from the selected IMU.
