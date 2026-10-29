@@ -1281,6 +1281,104 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Custom:Buck_Conv_(+5V)"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 6.096 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V Buck_Conv"
+				(at 5.842 -0.508 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Buck_Conv_(+5V)_1_1"
+				(rectangle
+					(start 1.27 -2.54)
+					(end 10.16 -6.35)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -1.27 -3.81 0)
+					(length 2.54)
+					(name "V_BATT"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 -3.81 180)
+					(length 2.54)
+					(name "PVOut"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Battery_Cell"
 			(pin_numbers
 				(hide yes)
@@ -3168,286 +3266,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "sim800l-core:SIM800L-CORE"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -7.62 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SIM800L-CORE"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SIM800L-CORE_0_1"
-				(rectangle
-					(start -8.89 7.62)
-					(end 10.16 -10.16)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "SIM800L-CORE_1_1"
-				(pin bidirectional line
-					(at -11.43 5.08 0)
-					(length 2.54)
-					(name "NET"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -11.43 2.54 0)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 0 0)
-					(length 2.54)
-					(name "RST"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -2.54 0)
-					(length 2.54)
-					(name "RXD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at -11.43 -5.08 0)
-					(length 2.54)
-					(name "TXD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -11.43 -7.62 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 5.08 180)
-					(length 2.54)
-					(name "RING"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 2.54 180)
-					(length 2.54)
-					(name "DTR"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 0 180)
-					(length 2.54)
-					(name "MIC+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 -2.54 180)
-					(length 2.54)
-					(name "MIC-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 -5.08 180)
-					(length 2.54)
-					(name "SPK+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 -7.62 180)
-					(length 2.54)
-					(name "SPK-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(text "For SIM:"
 		(exclude_from_sim no)
@@ -3516,16 +3334,22 @@
 		(uuid "026f5bcb-3090-4cdb-908c-d97f51e06196")
 	)
 	(junction
+		(at 148.59 27.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "116533e8-172b-43e4-90cc-1043eab78904")
+	)
+	(junction
+		(at 111.76 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e7e1732-e00d-45f0-af83-1effb043acc7")
+	)
+	(junction
 		(at 116.84 27.94)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3475e49e-b58d-4983-858f-7b43371fdb7c")
-	)
-	(junction
-		(at 99.06 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3ca13d68-a5d6-48fa-84a2-61099f1da8a0")
 	)
 	(junction
 		(at 99.06 113.03)
@@ -3538,12 +3362,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "84d93464-a861-4849-8fe4-a67df4698dbb")
-	)
-	(junction
-		(at 148.59 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bf9e723a-992a-4368-b840-d1eecdb744dc")
 	)
 	(junction
 		(at 156.21 113.03)
@@ -3659,6 +3477,16 @@
 	)
 	(wire
 		(pts
+			(xy 96.52 144.78) (xy 100.33 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a89eff6-287b-4413-9a91-e9be94e1a3b0")
+	)
+	(wire
+		(pts
 			(xy 182.88 52.07) (xy 187.96 52.07)
 		)
 		(stroke
@@ -3699,7 +3527,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 64.77) (xy 46.99 105.41)
+			(xy 46.99 64.77) (xy 46.99 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3899,17 +3727,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 105.41) (xy 99.06 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c10b580-f7de-45bd-bca7-85f2e4dcf48f")
-	)
-	(wire
-		(pts
-			(xy 182.88 33.02) (xy 182.88 52.07)
+			(xy 182.88 27.94) (xy 182.88 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3959,17 +3777,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 105.41) (xy 99.06 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9095e0c5-f784-4503-88be-cd94637943aa")
-	)
-	(wire
-		(pts
-			(xy 46.99 105.41) (xy 99.06 105.41)
+			(xy 46.99 113.03) (xy 99.06 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3989,7 +3797,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 27.94) (xy 148.59 33.02)
+			(xy 148.59 27.94) (xy 148.59 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4009,7 +3817,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 85.09) (xy 107.95 105.41)
+			(xy 111.76 85.09) (xy 111.76 113.03)
 		)
 		(stroke
 			(width 0)
@@ -4029,6 +3837,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 113.03) (xy 132.08 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8362d40-fc41-48a2-ab5a-d1cbb5066fac")
+	)
+	(wire
+		(pts
 			(xy 77.47 39.37) (xy 77.47 19.05)
 		)
 		(stroke
@@ -4039,7 +3857,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 33.02) (xy 182.88 33.02)
+			(xy 148.59 27.94) (xy 182.88 27.94)
 		)
 		(stroke
 			(width 0)
@@ -4169,7 +3987,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 113.03) (xy 132.08 113.03)
+			(xy 99.06 113.03) (xy 111.76 113.03)
 		)
 		(stroke
 			(width 0)
@@ -4199,7 +4017,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 85.09) (xy 107.95 85.09)
+			(xy 105.41 85.09) (xy 111.76 85.09)
 		)
 		(stroke
 			(width 0)
@@ -4226,16 +4044,6 @@
 			(type default)
 		)
 		(uuid "f9c61b9e-784e-4004-bad2-280ee207e991")
-	)
-	(wire
-		(pts
-			(xy 148.59 33.02) (xy 148.59 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd722a93-b46c-4998-bc5f-adcad5af6d52")
 	)
 	(image
 		(at -96.52 171.45)
@@ -6641,7 +6449,8 @@
 		)
 	)
 	(image
-		(at -58.42 113.03)
+		(at -43.18 114.3)
+		(scale 1.78501)
 		(uuid "ba992ccd-e472-4100-a0a1-1e1e1656fd67")
 		(data "iVBORw0KGgoAAAANSUhEUgAAAj0AAAEsCAYAAAAo8wKiAAAABHNCSVQICAgIfAhkiAAAIABJREFU"
 			"eJzsvVmQZcl53/fLzLPfrW4tXUvvs2+YwcxgAG6AQZEiGaLCdJCmQFnhkEWFKDpsR1iOkJ8Z1oMe"
@@ -10658,7 +10467,8 @@
 		)
 	)
 	(image
-		(at -58.42 73.66)
+		(at -40.64 60.96)
+		(scale 1.45915)
 		(uuid "cbf34c3b-934c-40f1-92a6-44320f09642d")
 		(data "iVBORw0KGgoAAAANSUhEUgAAAqQAAAHTCAYAAADxiQpNAAAABHNCSVQICAgIfAhkiAAAIABJREFU"
 			"eJzsnXd8XNWZsJ9z750mTVGxLcu23LCNAVds44bBlAAGTHUSAqH9NpDCpvw2ENj9NuskBBY2hmRh"
@@ -14077,6 +13887,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 100.33 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3aa458ed-5541-4ee9-b2be-118f5cdca58e")
+		(property "Reference" "#PWR03"
+			(at 100.33 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 100.33 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 100.33 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "124cd4b4-e627-4fe7-aee6-348190fa8ee3")
+		)
+		(instances
+			(project "FallVest_BDC"
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "sim800l-core:ATGM336H-5N31")
 		(at 226.06 49.53 0)
 		(mirror y)
@@ -14328,6 +14204,74 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Custom:Buck_Conv_(+5V)")
+		(at 83.82 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b1b11b9-68f0-4d95-96be-0ffcb61e4fad")
+		(property "Reference" "U1"
+			(at 89.535 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V Buck_Conv"
+			(at 89.535 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d4ef4f4a-1f5b-4558-bfda-54b243ff6eec")
+		)
+		(pin "2"
+			(uuid "8e90c8e6-74b0-4177-9c63-70c18fb2d595")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -14764,104 +14708,6 @@
 			(project "FallVest_BDC"
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "sim800l-core:SIM800L-CORE")
-		(at 242.57 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bd773030-5e02-45af-8fe8-ecfe97a867b7")
-		(property "Reference" "U1"
-			(at 243.205 19.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SIM800L-CORE"
-			(at 243.205 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 242.57 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 242.57 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 242.57 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "e74ae515-4edd-436d-a526-cf43a406d24e")
-		)
-		(pin "10"
-			(uuid "ee9560e6-7437-40f5-99be-5bc3731d087d")
-		)
-		(pin "3"
-			(uuid "df8eebd8-0b43-49be-84b4-56e7b31466ea")
-		)
-		(pin "9"
-			(uuid "83846df7-0f5c-4a74-93b7-7d00f2431c09")
-		)
-		(pin "12"
-			(uuid "9c4b801c-5a5a-408b-8cfc-3b51a649151b")
-		)
-		(pin "1"
-			(uuid "7cdd07fa-771f-41b2-9b94-5a5a5f506856")
-		)
-		(pin "8"
-			(uuid "de88261d-15ef-4ee5-b4b2-63d496c22a08")
-		)
-		(pin "11"
-			(uuid "465569dd-b248-41d2-921b-f15b5adfd7c1")
-		)
-		(pin "2"
-			(uuid "40a9c4b0-5ca6-4c60-b2fc-22ef91996f50")
-		)
-		(pin "7"
-			(uuid "78feb8a6-2156-4960-8120-d730d70192e5")
-		)
-		(pin "6"
-			(uuid "cf9e7148-b76f-43c1-8989-947eca12b7f4")
-		)
-		(pin "5"
-			(uuid "4d3f8bc2-2fc4-4a8a-808a-bd9b44d5975b")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "U1")
 					(unit 1)
 				)
 			)
