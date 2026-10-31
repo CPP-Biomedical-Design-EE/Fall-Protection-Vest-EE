@@ -9,7 +9,7 @@ const FIELDS = [
 const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
-  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "reset", "csv", "png",
+  "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "reset", "disconnect", "csv", "png",
   "status", "samples", "elapsed", "rate", "gaps", "total", "graph", "hover"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
@@ -17,6 +17,10 @@ const ctx = canvas.getContext("2d");
 let port = null;
 let reader = null;
 let running = false;
+let finishing = false;
+let connecting = false;
+let disconnecting = false;
+let choosePortNext = false;
 let rows = [];
 let previous = null;
 let deviceElapsed = 0;
@@ -37,20 +41,6 @@ function setStatus(message, error = false) {
 
 function validLabel(value) {
   return /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(value);
-}
-
-function updateSavedLabels() {
-  if (running || !rows.length || !session || session.autoSaved) return;
-  const valid = validLabel(els.label.value.trim());
-  els.csv.disabled = !valid;
-  els.png.disabled = !valid;
-  if (!valid) return;
-  session.label = els.label.value.trim();
-  session.eventClass = els["event-class"].value;
-  for (const row of rows) {
-    row.label = session.label;
-    row.event_class = session.eventClass;
-  }
 }
 
 function updateFolderStatus() {
@@ -92,7 +82,6 @@ function selectActivity() {
       : label.startsWith("prefall_")
         ? "Near-fall means balance was lost and recovered, without ground impact. Do not deliberately create unsafe slips or falls."
         : "Choose the action actually performed before recording. Automatic files use that action's folder.";
-  updateSavedLabels();
   updateFolderStatus();
 }
 
@@ -278,11 +267,13 @@ function drawGraph() {
 async function readSerial() {
   const decoder = new TextDecoder();
   let pending = "";
+  const currentPort = port;
+  let connectionError = "";
   try {
-    while (running && port?.readable) {
-      reader = port.readable.getReader();
+    while (currentPort?.readable && !disconnecting) {
+      reader = currentPort.readable.getReader();
       try {
-        while (running) {
+        while (!disconnecting) {
           const result = await reader.read();
           if (result.done) break;
           pending += decoder.decode(result.value, { stream: true });
@@ -292,8 +283,7 @@ async function readSerial() {
             const line = pending.slice(0, end);
             pending = pending.slice(end + 1);
             const sample = parseLine(line);
-            if (sample) addSample(sample);
-            if (!running) break;
+            if (sample && running) addSample(sample);
           }
         }
       } finally {
@@ -303,43 +293,71 @@ async function readSerial() {
       break;
     }
   } catch (error) {
-    if (running) setStatus(`Serial connection stopped: ${error.message}`, true);
+    connectionError = `Serial connection stopped: ${error.message}`;
   } finally {
-    running = false;
-    try { if (port) await port.close(); } catch { /* Browser may close an unplugged port. */ }
-    port = null;
-    showAll = true;
-    hoverX = null;
-    drawGraph();
-    const priorError = els.status.classList.contains("error") ? `${els.status.textContent} ` : "";
-    let saveMessage = rows.length ? "Download the CSV and graph to save this session." : "No samples to save.";
-    let saveError = false;
-    if (rows.length && session?.saveFolder) {
-      setStatus(`${priorError}Recording stopped. Saving CSV and graph…`, !!priorError);
-      try {
-        const savedPath = await saveSessionToFolder();
-        saveMessage = `Saved CSV and graph in ${savedPath}.`;
-      } catch (error) {
-        saveError = true;
-        saveMessage = `Automatic save failed: ${error.message}. Use the download buttons now; a partial file may exist in the chosen folder.`;
-      }
+    try { await currentPort?.close(); } catch { /* Browser may close an unplugged port. */ }
+    if (port === currentPort) port = null;
+    const wasDisconnecting = disconnecting;
+    disconnecting = false;
+    if (running) {
+      await stopCapture(connectionError || "ESP32 disconnected unexpectedly.");
+    } else if (!finishing) {
+      els.connect.textContent = "Connect and record";
+      els.connect.disabled = false;
+      els.disconnect.disabled = true;
+      setStatus(wasDisconnecting
+        ? "ESP32 disconnected. The last test is still available on this page."
+        : `${connectionError || "ESP32 disconnected."} The last test is still available on this page.`,
+        !wasDisconnecting);
     }
-    const seconds = rows.length ? rows.at(-1).elapsed : 0;
-    const hz = intervals.length ? intervals.length / intervals.reduce((sum, value) => sum + value, 0) : 0;
-    const quality = rows.length >= 101 && gapCount === 0 && hz >= 95 && hz <= 105
-      ? "100 Hz timing check passed" : "100 Hz timing not verified";
-    setStatus(`${priorError}Stopped: ${rows.length} samples, ${seconds.toFixed(1)} s. ${quality}. ${saveMessage}`, !!priorError || saveError);
-    els.connect.disabled = false;
-    els.stop.disabled = true;
-    els.reset.disabled = rows.length === 0;
-    els.csv.disabled = rows.length === 0;
-    els.png.disabled = rows.length === 0;
-    [els.subject, els.activity, els.label, els.duration, els.folder].forEach(element => { element.disabled = false; });
-    els["event-class"].disabled = els.activity.value !== "custom";
   }
 }
 
+async function stopCapture(reason = "") {
+  if (!running) return;
+  running = false;
+  finishing = true;
+  els.stop.disabled = true;
+  els.connect.disabled = true;
+  els.disconnect.disabled = true;
+  els.reset.disabled = true;
+  showAll = true;
+  hoverX = null;
+  drawGraph();
+  let saveMessage = rows.length ? "Download the CSV and graph to save this session." : "No samples to save.";
+  let saveError = false;
+  if (rows.length && session?.saveFolder) {
+    setStatus("Recording stopped. Saving CSV and graph…");
+    try {
+      const savedPath = await saveSessionToFolder();
+      saveMessage = `Saved CSV and graph in ${savedPath}.`;
+    } catch (error) {
+      saveError = true;
+      saveMessage = `Automatic save failed: ${error.message}. Use the download buttons now; a partial file may exist in the chosen folder.`;
+    }
+  }
+  const seconds = rows.length ? rows.at(-1).elapsed : 0;
+  const hz = intervals.length ? intervals.length / intervals.reduce((sum, value) => sum + value, 0) : 0;
+  const quality = rows.length >= 101 && gapCount === 0 && hz >= 95 && hz <= 105
+    ? "100 Hz timing check passed" : "100 Hz timing not verified";
+  finishing = false;
+  const nextStep = port
+    ? "ESP32 stays connected. Choose the next action and click Start next test."
+    : "Connect the ESP32 to record another test.";
+  setStatus(`${reason ? `${reason} ` : ""}Stopped: ${rows.length} samples, ${seconds.toFixed(1)} s. ${quality}. ${saveMessage} ${nextStep}`,
+    !!reason || saveError);
+  els.connect.textContent = port ? "Start next test" : "Connect and record";
+  els.connect.disabled = false;
+  els.disconnect.disabled = !port;
+  els.reset.disabled = rows.length === 0;
+  els.csv.disabled = rows.length === 0;
+  els.png.disabled = rows.length === 0;
+  [els.subject, els.activity, els.label, els.duration, els.folder].forEach(element => { element.disabled = false; });
+  els["event-class"].disabled = els.activity.value !== "custom";
+}
+
 async function connect() {
+  if (running || finishing || connecting || disconnecting) return;
   if (!("serial" in navigator)) {
     setStatus("Web Serial is unavailable. Open this HTTPS page in Chrome or Edge on a desktop computer.", true);
     return;
@@ -351,9 +369,21 @@ async function connect() {
     setStatus("Use IDs and labels with letters, numbers, underscores or hyphens; duration must be 1–600 seconds.", true);
     return;
   }
+  if (rows.length && !session?.autoSaved &&
+      !window.confirm("Start a new test? The previous test has not been saved automatically. Download its CSV and graph first if you need them.")) return;
+  connecting = true;
+  els.connect.disabled = true;
+  els.reset.disabled = true;
+  els.disconnect.disabled = true;
+  let selectedPort = null;
   try {
-    port = await navigator.serial.requestPort();
-    await port.open({ baudRate: 115200 });
+    if (!port) {
+      const granted = choosePortNext ? [] : await navigator.serial.getPorts();
+      selectedPort = granted.length === 1 ? granted[0] : await navigator.serial.requestPort();
+      await selectedPort.open({ baudRate: 115200 });
+      port = selectedPort;
+      choosePortNext = false;
+    }
     session = {
       subject, label, eventClass: els["event-class"].value, duration, saveFolder,
       startedAt: new Date().toISOString().replace(/[-:.]/g, ""),
@@ -364,26 +394,49 @@ async function connect() {
     els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
     els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
     els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
-    els.connect.disabled = true; els.stop.disabled = false;
+    els.connect.textContent = "Start next test";
+    els.stop.disabled = false;
     [els.subject, els.activity, els.label, els["event-class"], els.duration, els.folder].forEach(element => { element.disabled = true; });
     running = true;
-    setStatus("Connected. Waiting for the first timestamped sensor sample…");
+    connecting = false;
+    setStatus("Recording. Waiting for the first timestamped sensor sample…");
     drawGraph();
-    void readSerial();
+    if (selectedPort) void readSerial();
   } catch (error) {
-    if (port) { try { await port.close(); } catch { /* Already closed. */ } port = null; }
+    if (selectedPort) {
+      try { await selectedPort.close(); } catch { /* Already closed. */ }
+      if (port === selectedPort) port = null;
+    }
+    connecting = false;
+    els.connect.disabled = false;
+    els.connect.textContent = port ? "Start next test" : "Connect and record";
+    els.disconnect.disabled = !port;
+    els.reset.disabled = rows.length === 0;
     setStatus(error.name === "NotFoundError" ? "No port selected." : `Could not connect: ${error.message}`, true);
   }
 }
 
-async function stopCapture() {
-  if (!running) return;
-  running = false;
-  if (reader) { try { await reader.cancel(); } catch { /* Read loop will close the port. */ } }
+async function disconnectPort() {
+  if (!port || running || finishing || connecting || disconnecting) return;
+  choosePortNext = true;
+  disconnecting = true;
+  els.connect.disabled = true;
+  els.disconnect.disabled = true;
+  setStatus("Disconnecting ESP32…");
+  if (reader) {
+    try { await reader.cancel(); } catch { /* The read loop handles a disconnected port. */ }
+  } else {
+    try { await port.close(); } catch { /* Already closed. */ }
+    port = null;
+    disconnecting = false;
+    els.connect.textContent = "Connect and record";
+    els.connect.disabled = false;
+    setStatus("ESP32 disconnected. The last test is still available on this page.");
+  }
 }
 
 function resetSession() {
-  if (running || els.reset.disabled) return;
+  if (running || finishing || connecting || els.reset.disabled) return;
   if (rows.length && !session?.autoSaved &&
       !window.confirm("Reset this test? This clears its graph and readings from the page. Save the CSV and graph first if you need them.")) return;
   rows = []; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
@@ -392,7 +445,9 @@ function resetSession() {
   els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
   els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
   els.hover.textContent = "Move the mouse over the graph to inspect a saved sample.";
-  setStatus("Ready for a new test. Choose an action, then click Connect and record.");
+  setStatus(port
+    ? "Graph cleared. ESP32 is still connected. Choose an action and click Start next test."
+    : "Ready for a new test. Choose an action, then click Connect and record.");
   drawGraph();
 }
 
@@ -446,10 +501,9 @@ els.folder.addEventListener("click", () => { void chooseSaveFolder(); });
 els.connect.addEventListener("click", connect);
 els.stop.addEventListener("click", () => { void stopCapture(); });
 els.reset.addEventListener("click", resetSession);
+els.disconnect.addEventListener("click", () => { void disconnectPort(); });
 els.activity.addEventListener("change", selectActivity);
 els.subject.addEventListener("input", updateFolderStatus);
-els.label.addEventListener("change", updateSavedLabels);
-els["event-class"].addEventListener("change", updateSavedLabels);
 els.csv.addEventListener("click", () => {
   if (!rows.length) return;
   downloadBlob(new Blob([csvData()], { type: "text/csv;charset=utf-8" }), filename("raw.csv"));

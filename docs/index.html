@@ -34,7 +34,7 @@
 </head>
 <body>
   <h1>InflateBody live sensor test</h1>
-  <p class="muted">Connect the existing USB ESP32 and record six-axis lower-back data. Choose a save folder once to save each CSV and graph automatically on this computer.</p>
+  <p class="muted">Connect the USB ESP32 once, then start each new test with one click. Choose a save folder once to save each CSV and graph automatically on this computer.</p>
   <section class="card" aria-label="Recording controls">
     <div class="fields">
       <label>Participant ID <input id="subject" type="text" placeholder="e.g. P02" maxlength="64" autocomplete="off"></label>
@@ -99,10 +99,12 @@
       <button id="folder" class="secondary">Choose save folder</button>
       <button id="connect">Connect and record</button>
       <button id="stop" class="secondary" disabled>Stop</button>
-      <button id="reset" class="secondary" disabled>Reset for new test</button>
+      <button id="reset" class="secondary" disabled>Clear last graph</button>
+      <button id="disconnect" class="secondary" disabled>Disconnect ESP32</button>
       <button id="csv" class="secondary" disabled>Download last CSV</button>
       <button id="png" class="secondary" disabled>Download last graph PNG</button>
     </div>
+    <p class="note">After Stop, choose the next action and click Start next test; this clears the displayed graph. The ESP32 stays connected until you click Disconnect ESP32 or close this page.</p>
     <p id="folder-status" class="note">No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.</p>
     <div id="status" role="status" aria-live="polite">Ready. Use Chrome or Edge on a desktop computer.</div>
     <div class="stats">
@@ -118,6 +120,6 @@
     <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
   </section>
   <p class="note">Chrome or Edge desktop + USB data cable required.</p>
-  <script src="app.js?v=20261024-actions2"></script>
+  <script src="app.js?v=20261030-repeat-tests"></script>
 </body>
 </html>
