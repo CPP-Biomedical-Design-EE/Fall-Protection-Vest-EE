@@ -226,12 +226,15 @@ function drawGraph() {
     ctx.fillText(panel.title, marginLeft, panel.y - 11);
     ctx.font = "12px system-ui";
     ctx.fillStyle = "#526674";
-    ctx.fillText(max.toFixed(1), 32, panel.y + 5);
-    ctx.fillText(min.toFixed(1), 32, panel.y + panel.h);
+    const oneG = panel.keys[0] === "magnitude" ? yFor(1) : null;
+    if (oneG === null || oneG - panel.y > 18) ctx.fillText(max.toFixed(1), 32, panel.y + 5);
+    if (oneG === null || panel.y + panel.h - oneG > 18) ctx.fillText(min.toFixed(1), 32, panel.y + panel.h);
     if (panel.keys[0] === "magnitude") {
-      ctx.setLineDash([5, 5]); ctx.strokeStyle = "#7f8990";
-      ctx.beginPath(); ctx.moveTo(marginLeft, yFor(1)); ctx.lineTo(width - marginRight, yFor(1)); ctx.stroke();
+      ctx.setLineDash([6, 4]); ctx.strokeStyle = "#536b78"; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(marginLeft, oneG); ctx.lineTo(width - marginRight, oneG); ctx.stroke();
       ctx.setLineDash([]);
+      ctx.fillStyle = "#324b59";
+      ctx.fillText("1.0 g", 32, oneG + 4);
     }
     panel.keys.forEach((key, index) => {
       ctx.strokeStyle = panel.keys.length === 1 ? "#7451ac" : colors[index];
@@ -249,6 +252,15 @@ function drawGraph() {
       ctx.fillStyle = ctx.strokeStyle;
       ctx.fillText(panel.labels[index], width - 155 + index * 45, panel.y - 11);
     });
+    if (oneG !== null) {
+      const label = "1 g reference";
+      const labelWidth = ctx.measureText(label).width + 10;
+      const labelX = width - marginRight - labelWidth - 6;
+      ctx.fillStyle = "#f8fbfc";
+      ctx.fillRect(labelX, oneG - 17, labelWidth, 15);
+      ctx.fillStyle = "#324b59";
+      ctx.fillText(label, labelX + 5, oneG - 5);
+    }
     if (hoverX !== null && hoverX >= marginLeft && hoverX <= width - marginRight) {
       ctx.strokeStyle = "#617888"; ctx.setLineDash([3, 4]);
       ctx.beginPath(); ctx.moveTo(hoverX, panel.y); ctx.lineTo(hoverX, panel.y + panel.h); ctx.stroke();
