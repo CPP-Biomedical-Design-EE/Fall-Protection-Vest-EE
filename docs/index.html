@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>InflateBody | Live sensor test</title>
+  <link rel="stylesheet" href="guide.css?v=20261101-guide1">
   <style>
     :root { color-scheme: light; font-family: system-ui, -apple-system, sans-serif; color: #172b3a; background: #f4f7f8; }
     body { max-width: 1160px; margin: 0 auto; padding: 28px 20px 50px; }
@@ -33,8 +34,52 @@
   </style>
 </head>
 <body>
-  <h1>InflateBody live sensor test</h1>
+  <div class="site-heading">
+    <h1>InflateBody live sensor test</h1>
+    <button id="guide-toggle" class="secondary" type="button" aria-expanded="false" aria-controls="guide-panel">Guide me</button>
+  </div>
   <p class="muted">Connect the USB ESP32 once, then start each new test with one click. Choose a save folder once to save each CSV and graph automatically on this computer.</p>
+  <aside class="coach" aria-label="Live instructions">
+    <span class="coach-label">What to do now</span>
+    <strong id="coach-title">Get ready to record</strong>
+    <p id="coach-message">Choose a save folder, then enter a participant ID.</p>
+    <button id="coach-guide" class="coach-link" type="button">Show the steps</button>
+  </aside>
+  <section id="guide-panel" class="card guide-panel" aria-label="Animated website guide" hidden>
+    <div class="guide-heading">
+      <div><span class="guide-eyebrow">Using this website</span><h2>Step-by-step guide</h2></div>
+      <button id="guide-close" class="secondary" type="button">Close guide</button>
+    </div>
+    <div class="guide-progress-row">
+      <span id="guide-progress">Step 1 of 6</span>
+      <div class="guide-progress-track" aria-hidden="true"><span id="guide-progress-fill"></span></div>
+    </div>
+    <div class="guide-content">
+      <div class="guide-visual" id="guide-visual" data-step="0" aria-hidden="true">
+        <div class="guide-demo">
+          <div class="guide-demo-heading">InflateBody live sensor test</div>
+          <div class="guide-demo-item" data-demo-step="0"><span>1</span> Choose save folder</div>
+          <div class="guide-demo-item" data-demo-step="1"><span>2</span> Participant ID · Action · Duration</div>
+          <div class="guide-demo-item" data-demo-step="2"><span>3</span> Connect and record</div>
+          <div class="guide-demo-item" data-demo-step="3"><span>4</span> Watch samples and live graph</div>
+          <div class="guide-demo-item" data-demo-step="4"><span>5</span> Stop · Save CSV + graph</div>
+          <div class="guide-demo-item" data-demo-step="5"><span>6</span> Start next test</div>
+        </div>
+      </div>
+      <div class="guide-copy">
+        <h3 id="guide-step-title">Choose a save folder</h3>
+        <p id="guide-step-text">Click Choose save folder and select a folder on this computer. The website saves each completed CSV and graph there.</p>
+        <p id="guide-step-tip" class="guide-tip">Choose the folder once for this page session.</p>
+        <button id="guide-go" type="button">Show me on the page</button>
+      </div>
+    </div>
+    <div class="guide-controls">
+      <button id="guide-back" class="secondary" type="button" disabled>Back</button>
+      <button id="guide-next" type="button">Next step</button>
+      <button id="guide-play" class="secondary" type="button">Play guide</button>
+      <button id="guide-replay" class="secondary" type="button">Replay animation</button>
+    </div>
+  </section>
   <section class="card" aria-label="Recording controls">
     <div class="fields">
       <label>Participant ID <input id="subject" type="text" placeholder="e.g. P02" maxlength="64" autocomplete="off"></label>
@@ -121,5 +166,6 @@
   </section>
   <p class="note">Chrome or Edge desktop + USB data cable required.</p>
   <script src="app.js?v=20261030-repeat-tests"></script>
+  <script src="guide.js?v=20261101-guide1"></script>
 </body>
 </html>
