@@ -10,7 +10,7 @@ const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
   "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "reset", "disconnect", "csv", "png",
-  "status", "samples", "elapsed", "rate", "gaps", "total", "graph", "hover"
+  "status", "reading-context", "samples", "elapsed", "rate", "gaps", "total-label", "total", "mean-total", "graph-title", "graph", "hover"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
 const ctx = canvas.getContext("2d");
@@ -22,6 +22,7 @@ let connecting = false;
 let disconnecting = false;
 let choosePortNext = false;
 let rows = [];
+let magnitudeSum = 0;
 let previous = null;
 let deviceElapsed = 0;
 let yaw = 0;
@@ -37,6 +38,22 @@ let saveFolder = null;
 function setStatus(message, error = false) {
   els.status.textContent = message;
   els.status.classList.toggle("error", error);
+}
+
+function updateReadingContext() {
+  if (running) {
+    els["reading-context"].textContent = `LIVE · ${session.subject} · ${session.label}. These readings are arriving from the ESP32 now.`;
+    els["total-label"].textContent = "Latest sample (g)";
+    els["graph-title"].textContent = "Live graph";
+  } else if (rows.length && session) {
+    els["reading-context"].textContent = `PREVIOUS TEST · ${session.subject} · ${session.label}. The numbers and graph below are from that recording, not a current sensor reading. Start a new test to see data from newly uploaded firmware.`;
+    els["total-label"].textContent = "Last sample of previous test (g)";
+    els["graph-title"].textContent = "Previous test graph";
+  } else {
+    els["reading-context"].textContent = "No current sensor reading. Start a test to see new data.";
+    els["total-label"].textContent = "Latest sample (g)";
+    els["graph-title"].textContent = "Graph — no recording";
+  }
 }
 
 function validLabel(value) {
@@ -143,11 +160,13 @@ function addSample(sample) {
     magnitude, gyroDps: [gx, gy, gz].map(value => value * RAD_TO_DEG), elapsed
   };
   rows.push(row);
+  magnitudeSum += magnitude;
   previous = sample;
   els.samples.textContent = String(rows.length);
   els.elapsed.textContent = `${elapsed.toFixed(1)} s`;
   els.gaps.textContent = String(gapCount);
-  els.total.textContent = `${magnitude.toFixed(2)} g`;
+  els.total.textContent = `${magnitude.toFixed(4)} g`;
+  els["mean-total"].textContent = `${(magnitudeSum / rows.length).toFixed(4)} g`;
   if (intervals.length >= 10) {
     const hz = intervals.length / intervals.reduce((sum, value) => sum + value, 0);
     els.rate.textContent = `${hz.toFixed(1)} Hz`;
@@ -310,6 +329,7 @@ async function readSerial() {
         : `${connectionError || "ESP32 disconnected."} The last test is still available on this page.`,
         !wasDisconnecting);
     }
+    updateReadingContext();
   }
 }
 
@@ -352,6 +372,7 @@ async function stopCapture(reason = "") {
   els.reset.disabled = rows.length === 0;
   els.csv.disabled = rows.length === 0;
   els.png.disabled = rows.length === 0;
+  updateReadingContext();
   [els.subject, els.activity, els.label, els.duration, els.folder].forEach(element => { element.disabled = false; });
   els["event-class"].disabled = els.activity.value !== "custom";
 }
@@ -389,15 +410,16 @@ async function connect() {
       startedAt: new Date().toISOString().replace(/[-:.]/g, ""),
       nonce: Math.random().toString(36).slice(2, 8), autoSaved: false
     };
-    rows = []; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+    rows = []; magnitudeSum = 0; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
     intervals = []; firstHostMs = null; showAll = false; hoverX = null;
     els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
-    els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
+    els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—"; els["mean-total"].textContent = "—";
     els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
     els.connect.textContent = "Start next test";
     els.stop.disabled = false;
     [els.subject, els.activity, els.label, els["event-class"], els.duration, els.folder].forEach(element => { element.disabled = true; });
     running = true;
+    updateReadingContext();
     connecting = false;
     setStatus("Recording. Waiting for the first timestamped sensor sample…");
     drawGraph();
@@ -432,6 +454,7 @@ async function disconnectPort() {
     els.connect.textContent = "Connect and record";
     els.connect.disabled = false;
     setStatus("ESP32 disconnected. The last test is still available on this page.");
+    updateReadingContext();
   }
 }
 
@@ -439,15 +462,16 @@ function resetSession() {
   if (running || finishing || connecting || els.reset.disabled) return;
   if (rows.length && !session?.autoSaved &&
       !window.confirm("Reset this test? This clears its graph and readings from the page. Save the CSV and graph first if you need them.")) return;
-  rows = []; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+  rows = []; magnitudeSum = 0; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
   intervals = []; firstHostMs = null; showAll = false; hoverX = null;
   els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
-  els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—";
+  els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—"; els["mean-total"].textContent = "—";
   els.csv.disabled = true; els.png.disabled = true; els.reset.disabled = true;
   els.hover.textContent = "Move the mouse over the graph to inspect a saved sample.";
   setStatus(port
     ? "Graph cleared. ESP32 is still connected. Choose an action and click Start next test."
     : "Ready for a new test. Choose an action, then click Connect and record.");
+  updateReadingContext();
   drawGraph();
 }
 
@@ -534,4 +558,5 @@ if (!("serial" in navigator)) {
 }
 if (typeof window.showDirectoryPicker !== "function") els.folder.disabled = true;
 selectActivity();
+updateReadingContext();
 drawGraph();

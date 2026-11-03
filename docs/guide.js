@@ -152,7 +152,11 @@
     }
     if (byId("connect").textContent === "Start next test") {
       suggestedStep = 5;
-      return ["Ready for another test", "The ESP32 is still connected. Choose the next action and click Start next test; the previous graph will clear automatically."];
+      return ["Ready for another test", "The graph shows the previous test. Choose the next action and click Start next test to see fresh ESP32 readings."];
+    }
+    if (samples > 0) {
+      suggestedStep = 2;
+      return ["Previous test is displayed", "The graph and acceleration numbers are from the last test. Connect and record to see fresh sensor readings."];
     }
     if (!byId("folder-status").textContent.startsWith("Automatic save:")) {
       suggestedStep = 0;

@@ -62,7 +62,7 @@ function makePage({ granted = false, confirm = () => true } = {}) {
   for (const id of [
     "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status",
     "connect", "stop", "reset", "disconnect", "csv", "png", "status", "samples", "elapsed", "rate",
-    "gaps", "total", "graph", "hover"
+    "gaps", "total-label", "total", "mean-total", "reading-context", "graph-title", "graph", "hover"
   ]) {
     elements[id] = {
       value: "", textContent: "", disabled: false, readOnly: false,
@@ -102,7 +102,13 @@ test("a connected ESP32 supports repeated saved trials without another port choo
   await page.context.connect();
   page.feed(1);
   await new Promise(setImmediate);
+  assert.match(page.elements["reading-context"].textContent, /^LIVE/);
+  assert.equal(page.elements.total.textContent, "1.0000 g");
+  assert.equal(page.elements["mean-total"].textContent, "1.0000 g");
   await page.context.stopCapture();
+  assert.match(page.elements["reading-context"].textContent, /^PREVIOUS TEST/);
+  assert.equal(page.elements["graph-title"].textContent, "Previous test graph");
+  assert.equal(page.elements["total-label"].textContent, "Last sample of previous test (g)");
   assert.equal(page.port.closeCount, 0);
   assert.equal(page.elements.connect.textContent, "Start next test");
   assert.equal(page.saved.size, 2);
@@ -110,9 +116,13 @@ test("a connected ESP32 supports repeated saved trials without another port choo
   page.elements.activity.value = "adl_T02_tie_shoes";
   page.context.selectActivity();
   await page.context.connect();
+  assert.match(page.elements["reading-context"].textContent, /^LIVE/);
+  assert.equal(page.elements.total.textContent, "—");
+  assert.equal(page.elements["mean-total"].textContent, "—");
   page.feed(2);
   await new Promise(setImmediate);
   await page.context.stopCapture();
+  assert.match(page.elements["reading-context"].textContent, /^PREVIOUS TEST/);
   assert.equal(page.requestCount, 1);
   assert.equal(page.port.openCount, 1);
   assert.equal(page.port.closeCount, 0);
@@ -121,6 +131,7 @@ test("a connected ESP32 supports repeated saved trials without another port choo
   assert.ok([...page.saved.keys()].some(key => key.startsWith("P01/adl_T02_tie_shoes/") && key.endsWith(".csv")));
 
   page.context.resetSession();
+  assert.equal(page.elements["reading-context"].textContent, "No current sensor reading. Start a test to see new data.");
   assert.equal(page.elements.connect.textContent, "Start next test");
   await page.context.connect();
   assert.equal(page.requestCount, 1);
@@ -129,6 +140,7 @@ test("a connected ESP32 supports repeated saved trials without another port choo
   await new Promise(setImmediate);
   assert.equal(page.port.closeCount, 1);
   assert.equal(page.elements.connect.textContent, "Connect and record");
+  assert.equal(page.elements["reading-context"].textContent, "No current sensor reading. Start a test to see new data.");
 });
 
 test("a previously approved port can be reused after a page reload", async () => {

@@ -79,4 +79,8 @@ test("website guide follows the recording workflow and highlights the relevant s
   els["status"].textContent = "Stopped. Download the CSV and graph to save this session.";
   update();
   assert.equal(els["coach-title"].textContent, "Save this test before continuing");
+  els["status"].textContent = "ESP32 disconnected. The last test is still available on this page.";
+  els["connect"].textContent = "Connect and record";
+  update();
+  assert.equal(els["coach-title"].textContent, "Previous test is displayed");
 });

@@ -26,6 +26,8 @@
     .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
     .stat { background: #edf4f7; border-radius: 7px; padding: 8px 11px; min-width: 120px; }
     .stat b { display: block; font-size: 1.1rem; }
+    .reading-context { margin: 15px 0 0; padding: 9px 11px; border-radius: 7px; background: #f1f5f7; color: #425e70; }
+    .graph-title { margin: 0 0 12px; font-size: 1.05rem; }
     #status { margin-top: 12px; min-height: 1.5em; font-weight: 600; }
     #status.error { color: #a62424; }
     canvas { width: 100%; height: auto; display: block; border: 1px solid #d8e2e7; border-radius: 8px; cursor: crosshair; }
@@ -152,20 +154,24 @@
     <p class="note">After Stop, choose the next action and click Start next test; this clears the displayed graph. The ESP32 stays connected until you click Disconnect ESP32 or close this page.</p>
     <p id="folder-status" class="note">No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.</p>
     <div id="status" role="status" aria-live="polite">Ready. Use Chrome or Edge on a desktop computer.</div>
+    <p id="reading-context" class="reading-context" aria-live="polite">No current sensor reading. Start a test to see new data.</p>
     <div class="stats">
       <div class="stat">Samples <b id="samples">0</b></div>
       <div class="stat">Elapsed <b id="elapsed">0.0 s</b></div>
       <div class="stat">Device rate <b id="rate">—</b></div>
       <div class="stat">Sequence gaps <b id="gaps">0</b></div>
-      <div class="stat">Total acceleration <b id="total">—</b></div>
+      <div class="stat"><span id="total-label">Latest sample (g)</span><b id="total">—</b></div>
+      <div class="stat">Test mean (g) <b id="mean-total">—</b></div>
     </div>
+    <p class="note">The test mean is comparable to a still calibration check only when the sensor stayed still. A firmware upload does not change an earlier recording.</p>
   </section>
   <section class="card">
+    <h2 id="graph-title" class="graph-title">Graph — no recording</h2>
     <canvas id="graph" width="1160" height="760" aria-label="Acceleration, angular velocity, total acceleration, and estimated angles"></canvas>
     <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
   </section>
   <p class="note">Chrome or Edge desktop + USB data cable required.</p>
-  <script src="app.js?v=20261030-repeat-tests"></script>
-  <script src="guide.js?v=20261101-guide1"></script>
+  <script src="app.js?v=20261102-reading-context"></script>
+  <script src="guide.js?v=20261102-reading-context"></script>
 </body>
 </html>
