@@ -321,7 +321,6 @@
 		(symbol "Connector_Generic:Conn_02x15_Odd_Even"
 			(pin_names
 				(offset 1.016)
-				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -744,7 +743,7 @@
 					(name "ENA"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -759,10 +758,10 @@
 				(pin passive line
 					(at -16.51 15.24 0)
 					(length 3.81)
-					(name "Pin_3"
+					(name "GPIX36"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -777,10 +776,10 @@
 				(pin passive line
 					(at -16.51 12.7 0)
 					(length 3.81)
-					(name "Pin_5"
+					(name "GPIX39"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -795,10 +794,10 @@
 				(pin passive line
 					(at -16.51 10.16 0)
 					(length 3.81)
-					(name "Pin_7"
+					(name "GPIX34"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -813,10 +812,10 @@
 				(pin passive line
 					(at -16.51 7.62 0)
 					(length 3.81)
-					(name "Pin_9"
+					(name "GPIX35"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -831,10 +830,10 @@
 				(pin passive line
 					(at -16.51 5.08 0)
 					(length 3.81)
-					(name "Pin_11"
+					(name "GPIO32"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -849,10 +848,10 @@
 				(pin passive line
 					(at -16.51 2.54 0)
 					(length 3.81)
-					(name "Pin_13"
+					(name "GPIO33"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -867,10 +866,10 @@
 				(pin passive line
 					(at -16.51 0 0)
 					(length 3.81)
-					(name "Pin_15"
+					(name "GPIO25"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -885,10 +884,10 @@
 				(pin passive line
 					(at -16.51 -2.54 0)
 					(length 3.81)
-					(name "Pin_17"
+					(name "GPIO26"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -903,10 +902,10 @@
 				(pin passive line
 					(at -16.51 -5.08 0)
 					(length 3.81)
-					(name "Pin_19"
+					(name "GPIO27"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -921,10 +920,10 @@
 				(pin passive line
 					(at -16.51 -7.62 0)
 					(length 3.81)
-					(name "Pin_21"
+					(name "GPIO14"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -939,10 +938,10 @@
 				(pin passive line
 					(at -16.51 -10.16 0)
 					(length 3.81)
-					(name "Pin_23"
+					(name "GPIO12"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -957,10 +956,10 @@
 				(pin passive line
 					(at -16.51 -12.7 0)
 					(length 3.81)
-					(name "Pin_25"
+					(name "GPIO13"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -975,10 +974,10 @@
 				(pin passive line
 					(at -16.51 -15.24 0)
 					(length 3.81)
-					(name "Pin_27"
+					(name "GND"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -993,10 +992,10 @@
 				(pin passive line
 					(at -16.51 -17.78 0)
 					(length 3.81)
-					(name "Pin_29"
+					(name "VIN"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1011,10 +1010,10 @@
 				(pin passive line
 					(at 7.62 17.78 180)
 					(length 3.81)
-					(name "Pin_2"
+					(name "GPIO23"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1029,10 +1028,10 @@
 				(pin passive line
 					(at 7.62 15.24 180)
 					(length 3.81)
-					(name "Pin_4"
+					(name "GPIO22"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1047,10 +1046,10 @@
 				(pin passive line
 					(at 7.62 12.7 180)
 					(length 3.81)
-					(name "Pin_6"
+					(name "TX0"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1065,10 +1064,10 @@
 				(pin passive line
 					(at 7.62 10.16 180)
 					(length 3.81)
-					(name "Pin_8"
+					(name "RX0"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1083,10 +1082,10 @@
 				(pin passive line
 					(at 7.62 7.62 180)
 					(length 3.81)
-					(name "Pin_10"
+					(name "GPIO21"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1101,10 +1100,10 @@
 				(pin passive line
 					(at 7.62 5.08 180)
 					(length 3.81)
-					(name "Pin_12"
+					(name "GPIO19"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1119,10 +1118,10 @@
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 3.81)
-					(name "Pin_14"
+					(name "GPIO18"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1137,10 +1136,10 @@
 				(pin passive line
 					(at 7.62 0 180)
 					(length 3.81)
-					(name "Pin_16"
+					(name "GPIO5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1155,10 +1154,10 @@
 				(pin passive line
 					(at 7.62 -2.54 180)
 					(length 3.81)
-					(name "Pin_18"
+					(name "GPIO17"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1173,10 +1172,10 @@
 				(pin passive line
 					(at 7.62 -5.08 180)
 					(length 3.81)
-					(name "Pin_20"
+					(name "GPIO16"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1191,10 +1190,10 @@
 				(pin passive line
 					(at 7.62 -7.62 180)
 					(length 3.81)
-					(name "Pin_22"
+					(name "GPIO4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1209,10 +1208,10 @@
 				(pin passive line
 					(at 7.62 -10.16 180)
 					(length 3.81)
-					(name "Pin_24"
+					(name "GPIO2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1227,10 +1226,10 @@
 				(pin passive line
 					(at 7.62 -12.7 180)
 					(length 3.81)
-					(name "Pin_26"
+					(name "GPIO15"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1245,10 +1244,10 @@
 				(pin passive line
 					(at 7.62 -15.24 180)
 					(length 3.81)
-					(name "Pin_28"
+					(name "GND"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1263,10 +1262,10 @@
 				(pin passive line
 					(at 7.62 -17.78 180)
 					(length 3.81)
-					(name "Pin_30"
+					(name "3.3V"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -14544,306 +14543,6 @@
 			"CphhkSRJkiRJkiRJUgEzLJIkSZIkSZIkSSpghkWSJEmSJEmSJEkFzLBIkiRJkiRJkiSpgP0/nYr/"
 			"u6t981gAAAAASUVORK5CYII="
 		)
-	)
-	(label "GPIO5"
-		(at 105.41 69.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "06f7bc3e-1296-4592-951e-1a86448f09fe")
-	)
-	(label "TX0"
-		(at 105.41 57.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0bfc05e1-c843-40d8-a13d-1f00f761e4ae")
-	)
-	(label "3.3V"
-		(at 105.41 87.63 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "11222e03-5d58-4c38-8239-c3174f71fec6")
-	)
-	(label "GPIX34"
-		(at 81.28 59.69 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "141e3f7c-ab91-423d-8535-bd4646253361")
-	)
-	(label "GPIX39"
-		(at 81.28 57.15 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1a5bfd39-1db8-4efd-91c8-95a6b07fa99f")
-	)
-	(label "ENA"
-		(at 81.28 52.07 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "22f19668-a492-4a8b-a3de-3e8d65ce4949")
-	)
-	(label "GPIO27"
-		(at 81.28 74.93 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "26e357e9-8e19-4027-b90b-444e32541815")
-	)
-	(label "GPIO13"
-		(at 81.28 82.55 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "31b2ce0f-72aa-48ff-8dd9-4acc440f46f5")
-	)
-	(label "GPIO17"
-		(at 105.41 72.39 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "32475693-7303-4d86-8499-4da4021bbd8e")
-	)
-	(label "GND"
-		(at 105.41 85.09 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "343b1cb3-4319-4d04-bf2b-60dd2d984008")
-	)
-	(label "GPIO32"
-		(at 81.28 64.77 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "41667123-3670-42fd-a8aa-83183004b461")
-	)
-	(label "GPIX36"
-		(at 81.28 54.61 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "531caada-c099-43f9-aa70-dd3a6a152baa")
-	)
-	(label "GPIO4"
-		(at 105.41 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "75386369-8ed3-4802-8bc5-389fa0eaf8fb")
-	)
-	(label "GPIO26"
-		(at 81.28 72.39 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "75d7a31f-cd76-4874-9538-6f94257a22d8")
-	)
-	(label "GPIO12"
-		(at 81.28 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "769d7c85-c7bf-46c9-8894-49ad86f4baab")
-	)
-	(label "GPIX35"
-		(at 81.28 62.23 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7e8fd37e-ef36-4c20-a8a5-eb97ded55d7a")
-	)
-	(label "GPIO22"
-		(at 105.41 54.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "886f80e2-6bfb-429c-b5ca-707a4825e50f")
-	)
-	(label "GPIO23"
-		(at 105.41 52.07 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8c6cdfad-9441-4190-acab-aeb2acfe3ad8")
-	)
-	(label "GPIO25"
-		(at 81.28 69.85 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8cf5a443-dd7f-4b2a-828e-45e61efd5ae6")
-	)
-	(label "GPIO21"
-		(at 105.41 62.23 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9878d9d6-0e51-4ed0-852c-79c2064d3b9a")
-	)
-	(label "GPIO33"
-		(at 81.28 67.31 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a4b6a4b6-baf1-4ba0-9d10-e8592028a696")
-	)
-	(label "GPIO19"
-		(at 105.41 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b12a5466-b93c-49a9-8b49-d1c2d788564f")
-	)
-	(label "RX0"
-		(at 105.41 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b77808d2-3c64-42d9-a276-21410746ad52")
-	)
-	(label "GPIO16"
-		(at 105.41 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c08dad44-1f3d-4cfe-8f1e-2d670ffe52b0")
-	)
-	(label "GPIO18"
-		(at 105.41 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d2d37301-ddda-452d-aa42-ae10adcb795f")
-	)
-	(label "GPIO15"
-		(at 105.41 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dfdcc278-311b-4a12-bef6-c1bf6fd4ac63")
-	)
-	(label "GND"
-		(at 81.28 85.09 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "dfef3d66-e777-40c2-9250-cd32cce8570f")
-	)
-	(label "GPIO2"
-		(at 105.41 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e73f9170-fc05-48e7-83ab-ef38447850f9")
-	)
-	(label "VIN"
-		(at 81.28 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "eb5acd64-f444-4969-815f-08d2f871c685")
-	)
-	(label "GPIO14"
-		(at 81.28 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f312e045-60af-4a21-8749-41214a2f7dde")
 	)
 	(symbol
 		(lib_id "Transistor_FET:AO3400A")
