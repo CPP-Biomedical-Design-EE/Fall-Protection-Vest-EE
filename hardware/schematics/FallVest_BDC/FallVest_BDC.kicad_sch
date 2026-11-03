@@ -741,7 +741,7 @@
 				(pin passive line
 					(at -16.51 17.78 0)
 					(length 3.81)
-					(name "Pin_1"
+					(name "ENA"
 						(effects
 							(font
 								(size 1.27 1.27)
