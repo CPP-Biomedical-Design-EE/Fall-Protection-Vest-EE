@@ -2809,6 +2809,12 @@
 		(uuid "efd98945-a4a1-49c0-b9db-a1115668ca21")
 	)
 	(junction
+		(at 62.23 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20c8ebd3-bb44-4261-91ff-97498c6b8f54")
+	)
+	(junction
 		(at 62.23 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10152,6 +10158,71 @@
 			"DwLxUfB+vz9tJLxhGFiWxf79+6murmb+/PnJaGUkEqGzs5NoNMqJJ56YtG/bNm+99RbhcJj58+cn"
 			"J9K3LIujR4/S1dVFLBZLitfW1laampqIRqPJPqmWZWEYBkqp5DRUc5HB4ZGc+6qrgjn3uUKQwniU"
 			"MldUtJiYpslXvvKVsnyFLwiCIAiCUCpmKkj/P9ELXKIe8PpMAAAAAElFTkSuQmCC"
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 62.23 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0af09870-0e72-4b36-b0ba-c7072f3d1424")
+		(property "Reference" "#PWR06"
+			(at 62.23 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 62.23 89.916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 62.23 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a341204-a652-4d6e-beea-443a492af24c")
+		)
+		(instances
+			(project "FallVest_BDC"
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
