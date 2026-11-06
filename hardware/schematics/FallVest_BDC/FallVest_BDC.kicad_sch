@@ -2514,305 +2514,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:AO3400A"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "AO3400A"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at 5.08 -1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
-				(at 5.08 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "N-Channel MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "AO3400A_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.921 0.381) (xy 3.683 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "AO3400A_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3V3"
 			(power)
 			(pin_numbers
@@ -3041,8 +2742,8 @@
 		)
 	)
 	(rectangle
-		(start 109.22 49.53)
-		(end 158.75 110.49)
+		(start 114.3 49.53)
+		(end 163.83 110.49)
 		(stroke
 			(width 0)
 			(type dash)
@@ -3090,7 +2791,7 @@
 	)
 	(text "Main PCB"
 		(exclude_from_sim no)
-		(at 131.826 58.42 0)
+		(at 136.906 58.42 0)
 		(effects
 			(font
 				(size 2.286 2.286)
@@ -3113,16 +2814,10 @@
 		(uuid "efd98945-a4a1-49c0-b9db-a1115668ca21")
 	)
 	(junction
-		(at 172.72 129.54)
+		(at 156.21 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "35814a25-39c5-46b1-a1a6-1090c75be291")
-	)
-	(junction
-		(at 172.72 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "68cd27dc-7fdf-4815-b128-7a22501633ba")
+		(uuid "6967a261-cdf1-403f-870c-7d8cc26c7ba3")
 	)
 	(junction
 		(at 137.16 129.54)
@@ -3155,22 +2850,10 @@
 		(uuid "c467fcea-2e72-4269-ac70-daf365d62268")
 	)
 	(junction
-		(at 151.13 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dd143354-d553-4896-bc70-60ed0933262e")
-	)
-	(junction
 		(at 166.37 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e2c2ec53-3299-4d78-8aa2-fb0221a3f1a7")
-	)
-	(junction
-		(at 195.58 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f3d8db84-3c05-4427-bafe-5ab27d5cad8e")
 	)
 	(no_connect
 		(at 80.01 57.15)
@@ -3210,7 +2893,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 101.6) (xy 151.13 129.54)
+			(xy 156.21 101.6) (xy 156.21 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3300,7 +2983,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 71.12) (xy 143.51 71.12)
+			(xy 151.13 71.12) (xy 148.59 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3310,7 +2993,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 101.6) (xy 151.13 101.6)
+			(xy 148.59 101.6) (xy 156.21 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3360,7 +3043,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 52.07) (xy 151.13 52.07)
+			(xy 96.52 52.07) (xy 156.21 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3380,7 +3063,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 55.88) (xy 146.05 55.88)
+			(xy 96.52 55.88) (xy 151.13 55.88)
 		)
 		(stroke
 			(width 0)
@@ -3400,7 +3083,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 93.98) (xy 195.58 104.14)
+			(xy 195.58 88.9) (xy 195.58 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3430,7 +3113,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 144.78) (xy 110.49 88.9)
+			(xy 115.57 144.78) (xy 115.57 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3440,7 +3123,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 88.9) (xy 157.48 88.9)
+			(xy 148.59 88.9) (xy 173.99 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3450,7 +3133,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 55.88) (xy 146.05 71.12)
+			(xy 151.13 55.88) (xy 151.13 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3460,7 +3143,7 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 144.78) (xy 110.49 144.78)
+			(xy 212.09 144.78) (xy 115.57 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3470,7 +3153,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 142.24) (xy 116.84 142.24)
+			(xy 209.55 142.24) (xy 121.92 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3490,17 +3173,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 88.9) (xy 172.72 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6004eceb-75cc-43d6-bc88-5535193197af")
-	)
-	(wire
-		(pts
-			(xy 166.37 38.1) (xy 195.58 38.1)
+			(xy 166.37 38.1) (xy 275.59 38.1)
 		)
 		(stroke
 			(width 0)
@@ -3510,17 +3183,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 38.1) (xy 195.58 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a473f24-c823-4c68-96e7-0d431f64f024")
-	)
-	(wire
-		(pts
-			(xy 110.49 88.9) (xy 119.38 88.9)
+			(xy 115.57 88.9) (xy 124.46 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3540,7 +3203,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 104.14) (xy 119.38 104.14)
+			(xy 66.04 104.14) (xy 124.46 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3557,16 +3220,6 @@
 			(type default)
 		)
 		(uuid "7ce39029-18eb-491c-8f3a-6046577fc5ff")
-	)
-	(wire
-		(pts
-			(xy 172.72 88.9) (xy 187.96 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7dfb3253-cf00-4606-9245-8bd85c049784")
 	)
 	(wire
 		(pts
@@ -3620,7 +3273,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 91.44) (xy 119.38 91.44)
+			(xy 121.92 91.44) (xy 124.46 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3630,7 +3283,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 52.07) (xy 151.13 78.74)
+			(xy 156.21 52.07) (xy 156.21 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3640,7 +3293,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 104.14) (xy 166.37 104.14)
+			(xy 148.59 104.14) (xy 166.37 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3650,23 +3303,13 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 78.74) (xy 143.51 78.74)
+			(xy 156.21 78.74) (xy 148.59 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9d40e172-a6f1-4903-b047-18df0763fe45")
-	)
-	(wire
-		(pts
-			(xy 195.58 38.1) (xy 275.59 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a15f2bd1-cbeb-4cf1-925d-2418e707cbef")
 	)
 	(wire
 		(pts
@@ -3677,6 +3320,16 @@
 			(type default)
 		)
 		(uuid "a2538909-de9f-41e2-8c3e-5b27ccf7c07f")
+	)
+	(wire
+		(pts
+			(xy 156.21 129.54) (xy 194.31 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4223909-a422-46b7-80aa-345bc97dd620")
 	)
 	(wire
 		(pts
@@ -3700,7 +3353,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 88.9) (xy 172.72 88.9)
+			(xy 181.61 88.9) (xy 195.58 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3710,7 +3363,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 142.24) (xy 116.84 91.44)
+			(xy 121.92 142.24) (xy 121.92 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3750,33 +3403,13 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 129.54) (xy 151.13 129.54)
+			(xy 137.16 129.54) (xy 156.21 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e483a84d-f21c-44f7-9ad7-d5f77e0c74a4")
-	)
-	(wire
-		(pts
-			(xy 172.72 111.76) (xy 172.72 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e59f9525-7c18-4c56-b030-4a9b1f460e74")
-	)
-	(wire
-		(pts
-			(xy 172.72 129.54) (xy 194.31 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7f33f7f-c683-491a-ab8b-bd5c6021ba8c")
 	)
 	(wire
 		(pts
@@ -3810,7 +3443,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 101.6) (xy 119.38 101.6)
+			(xy 102.87 101.6) (xy 124.46 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3827,16 +3460,6 @@
 			(type default)
 		)
 		(uuid "f75238c1-4a55-4bdc-a988-212aac82a159")
-	)
-	(wire
-		(pts
-			(xy 151.13 129.54) (xy 172.72 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa52becd-c47e-49c8-9152-f088d2b28975")
 	)
 	(wire
 		(pts
@@ -10594,84 +10217,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_FET:AO3400A")
-		(at 193.04 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "16c0e61f-1a47-4bb0-9f15-45607b24a63e")
-		(property "Reference" "Q1"
-			(at 199.39 87.6299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "AO3400A"
-			(at 199.39 90.1699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 198.12 90.805 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
-			(at 198.12 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
-			(at 193.04 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "c213ff7a-daf8-4aa9-a331-3cf612ab3747")
-		)
-		(pin "2"
-			(uuid "64adef2a-7b25-4fac-a8c5-9f8a07e4a9f4")
-		)
-		(pin "1"
-			(uuid "3bc62b91-f5ea-4866-a234-70d65b312b5f")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_02x15_Odd_Even")
-		(at 135.89 86.36 0)
+		(at 140.97 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10680,7 +10227,7 @@
 		(fields_autoplaced yes)
 		(uuid "26a149e1-772f-44a1-82e2-eaeed3785f12")
 		(property "Reference" "ELEGOO_ESP32"
-			(at 132.08 62.484 0)
+			(at 137.16 62.484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10688,7 +10235,7 @@
 			)
 		)
 		(property "Value" "Development Board"
-			(at 131.826 64.516 0)
+			(at 136.906 64.516 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10696,7 +10243,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 86.36 0)
+			(at 140.97 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10705,7 +10252,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 86.36 0)
+			(at 140.97 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10714,7 +10261,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x15, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 135.89 86.36 0)
+			(at 140.97 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10723,7 +10270,7 @@
 			)
 		)
 		(property "Field5" ""
-			(at 135.89 86.36 0)
+			(at 140.97 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11682,75 +11229,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 172.72 107.95 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d0d9d4ef-fb8d-4a0c-8443-d8accd3ac996")
-		(property "Reference" "R"
-			(at 166.37 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220"
-			(at 168.91 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 171.704 107.696 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 172.72 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 172.72 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2f5aa12e-897a-4e45-9f87-848ce128af29")
-		)
-		(pin "1"
-			(uuid "ef93bd85-b565-4f3a-970f-e3ebd5e121aa")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "R")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 161.29 88.9 270)
+		(at 177.8 88.9 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11759,7 +11238,7 @@
 		(fields_autoplaced yes)
 		(uuid "e07771bf-de52-4a3a-af07-b87ea24ccef7")
 		(property "Reference" "R1"
-			(at 161.29 82.55 90)
+			(at 177.8 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11767,7 +11246,7 @@
 			)
 		)
 		(property "Value" "220"
-			(at 161.29 85.09 90)
+			(at 177.8 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11775,7 +11254,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.036 89.916 90)
+			(at 177.546 89.916 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11784,7 +11263,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 88.9 0)
+			(at 177.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11793,7 +11272,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 161.29 88.9 0)
+			(at 177.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
