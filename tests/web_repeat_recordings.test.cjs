@@ -62,7 +62,8 @@ function makePage({ granted = false, confirm = () => true } = {}) {
   for (const id of [
     "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status",
     "connect", "stop", "reset", "disconnect", "csv", "png", "status", "samples", "elapsed", "rate",
-    "gaps", "total-label", "total", "mean-total", "reading-context", "graph-title", "graph", "hover"
+    "gaps", "total-label", "total", "mean-total", "reading-context", "graph-title", "graph", "hover",
+    "action-start", "action-end", "actions-csv", "action-log"
   ]) {
     elements[id] = {
       value: "", textContent: "", disabled: false, readOnly: false,
@@ -176,5 +177,40 @@ test("starting another trial asks before discarding data without automatic savin
   assert.equal(page.elements.samples.textContent, "1");
   assert.equal(page.requestCount, 1);
   assert.equal(page.port.closeCount, 0);
+  await page.context.disconnectPort();
+});
+
+
+test("action start and end markers save beside each trial and reset for the next", async () => {
+  const page = makePage();
+  await page.context.chooseSaveFolder();
+  await page.context.connect();
+  assert.equal(page.elements["action-start"].disabled, true);
+  page.feed(1);
+  await new Promise(setImmediate);
+  assert.equal(page.elements["action-start"].disabled, false);
+  page.context.markAction("start");
+  assert.equal(page.elements["action-end"].disabled, false);
+  page.feed(2);
+  await new Promise(setImmediate);
+  page.context.markAction("end");
+  page.feed(3);
+  await new Promise(setImmediate);
+  page.context.markAction("start");
+  page.feed(4);
+  await new Promise(setImmediate);
+  page.context.markAction("end");
+  await page.context.stopCapture();
+  const markerFiles = [...page.saved.entries()].filter(([name]) => name.endsWith("_actions.csv"));
+  assert.equal(markerFiles.length, 1);
+  assert.match(markerFiles[0][1], /1,start/);
+  assert.match(markerFiles[0][1], /1,end/);
+  assert.match(markerFiles[0][1], /2,start/);
+  assert.match(markerFiles[0][1], /2,end/);
+  assert.equal(page.saved.size, 3);
+  await page.context.connect();
+  assert.equal(vm.runInContext("actionMarks.length", page.context), 0);
+  assert.equal(page.elements["actions-csv"].disabled, true);
+  await page.context.stopCapture();
   await page.context.disconnectPort();
 });

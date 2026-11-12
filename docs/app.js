@@ -10,7 +10,8 @@ const G = 9.80665;
 const RAD_TO_DEG = 180 / Math.PI;
 const els = Object.fromEntries([
   "subject", "activity", "activity-guidance", "label", "event-class", "duration", "folder", "folder-status", "connect", "stop", "reset", "disconnect", "csv", "png",
-  "status", "reading-context", "samples", "elapsed", "rate", "gaps", "total-label", "total", "mean-total", "graph-title", "graph", "hover"
+  "status", "reading-context", "samples", "elapsed", "rate", "gaps", "total-label", "total", "mean-total", "graph-title", "graph", "hover",
+  "action-start", "action-end", "actions-csv", "action-log"
 ].map(id => [id, document.getElementById(id)]));
 const canvas = els.graph;
 const ctx = canvas.getContext("2d");
@@ -34,6 +35,7 @@ let showAll = false;
 let hoverX = null;
 let session = null;
 let saveFolder = null;
+let actionMarks = [];
 
 function setStatus(message, error = false) {
   els.status.textContent = message;
@@ -62,7 +64,7 @@ function validLabel(value) {
 
 function updateFolderStatus() {
   els["folder-status"].textContent = saveFolder
-    ? `Automatic save: ${saveFolder.name}/${els.subject.value.trim() || "participant"}/${els.label.value.trim() || "action"}/ (CSV + PNG after Stop or duration). Choose the folder again after reloading this page.`
+    ? `Automatic save: ${saveFolder.name}/${els.subject.value.trim() || "participant"}/${els.label.value.trim() || "action"}/ (sensor CSV + graph PNG + action times CSV when marked, after Stop or duration). Choose the folder again after reloading this page.`
     : "No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.";
 }
 
@@ -160,6 +162,7 @@ function addSample(sample) {
     magnitude, gyroDps: [gx, gy, gz].map(value => value * RAD_TO_DEG), elapsed
   };
   rows.push(row);
+  if (rows.length === 1) updateActionControls();
   magnitudeSum += magnitude;
   previous = sample;
   els.samples.textContent = String(rows.length);
@@ -176,6 +179,36 @@ function addSample(sample) {
     requestAnimationFrame(drawGraph);
   }
   if (elapsed >= session.duration) void stopCapture();
+}
+
+function updateActionControls() {
+  const hasSample = running && rows.length > 0;
+  const open = actionMarks.length > 0 && actionMarks.at(-1).kind === "start";
+  els["action-start"].disabled = !hasSample || open;
+  els["action-end"].disabled = !hasSample || !open;
+  els["actions-csv"].disabled = !actionMarks.length;
+  els["action-log"].textContent = actionMarks.length
+    ? actionMarks.map(mark => `Repeat ${mark.repeat}: ${mark.kind} at ${mark.elapsed_s} s`).join("  |  ")
+    : "No action times marked.";
+}
+
+function markAction(kind) {
+  if (!running || !rows.length) return;
+  const open = actionMarks.length > 0 && actionMarks.at(-1).kind === "start";
+  if ((kind === "start" && open) || (kind === "end" && !open)) return;
+  const row = rows.at(-1);
+  actionMarks.push({
+    repeat: kind === "start" ? actionMarks.filter(mark => mark.kind === "start").length + 1 : actionMarks.at(-1).repeat,
+    kind, timestamp_utc: row.timestamp_utc, elapsed_s: row.elapsed_s,
+    device_elapsed_s: row.device_elapsed_s, sequence: row.sequence
+  });
+  updateActionControls();
+  drawGraph();
+}
+
+function actionTimesCsv() {
+  const keys = ["repeat", "kind", "timestamp_utc", "elapsed_s", "device_elapsed_s", "sequence"];
+  return [keys.join(","), ...actionMarks.map(mark => keys.map(key => csvCell(mark[key])).join(","))].join("\r\n") + "\r\n";
 }
 
 function visibleRows() {
@@ -275,6 +308,18 @@ function drawGraph() {
       ctx.setLineDash([]);
     }
   }
+  for (const mark of actionMarks) {
+    const time = Number(mark.elapsed_s);
+    if (time < left || time > right) continue;
+    const x = marginLeft + (time - left) / Math.max(1, right - left) * plotWidth;
+    ctx.strokeStyle = mark.kind === "start" ? "#168660" : "#b37418";
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 4]);
+    ctx.beginPath(); ctx.moveTo(x, panels[0].y); ctx.lineTo(x, panels.at(-1).y + panels.at(-1).h); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = ctx.strokeStyle; ctx.font = "12px system-ui";
+    ctx.fillText(`${mark.kind === "start" ? "S" : "E"}${mark.repeat}`, Math.min(x + 3, width - 38), 27);
+  }
   ctx.fillStyle = "#526674"; ctx.font = "12px system-ui";
   for (let i = 0; i <= 4; i++) {
     const t = left + i * (right - left) / 4;
@@ -338,6 +383,7 @@ async function stopCapture(reason = "") {
   running = false;
   finishing = true;
   els.stop.disabled = true;
+  updateActionControls();
   els.connect.disabled = true;
   els.disconnect.disabled = true;
   els.reset.disabled = true;
@@ -350,7 +396,7 @@ async function stopCapture(reason = "") {
     setStatus("Recording stopped. Saving CSV and graph…");
     try {
       const savedPath = await saveSessionToFolder();
-      saveMessage = `Saved CSV and graph in ${savedPath}.`;
+      saveMessage = `Saved sensor CSV, graph, and any marked action times in ${savedPath}.`;
     } catch (error) {
       saveError = true;
       saveMessage = `Automatic save failed: ${error.message}. Use the download buttons now; a partial file may exist in the chosen folder.`;
@@ -410,7 +456,8 @@ async function connect() {
       startedAt: new Date().toISOString().replace(/[-:.]/g, ""),
       nonce: Math.random().toString(36).slice(2, 8), autoSaved: false
     };
-    rows = []; magnitudeSum = 0; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+    rows = []; actionMarks = []; magnitudeSum = 0; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+    updateActionControls();
     intervals = []; firstHostMs = null; showAll = false; hoverX = null;
     els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
     els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—"; els["mean-total"].textContent = "—";
@@ -462,7 +509,8 @@ function resetSession() {
   if (running || finishing || connecting || els.reset.disabled) return;
   if (rows.length && !session?.autoSaved &&
       !window.confirm("Reset this test? This clears its graph and readings from the page. Save the CSV and graph first if you need them.")) return;
-  rows = []; magnitudeSum = 0; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+  rows = []; actionMarks = []; magnitudeSum = 0; session = null; previous = null; deviceElapsed = 0; yaw = 0; gapCount = 0;
+  updateActionControls();
   intervals = []; firstHostMs = null; showAll = false; hoverX = null;
   els.samples.textContent = "0"; els.elapsed.textContent = "0.0 s";
   els.rate.textContent = "—"; els.gaps.textContent = "0"; els.total.textContent = "—"; els["mean-total"].textContent = "—";
@@ -511,6 +559,7 @@ async function saveSessionToFolder() {
   const action = await participant.getDirectoryHandle(session.label, { create: true });
   const base = `${session.label}_lower_back_center_waist_${session.startedAt}_${session.nonce}`;
   await writeFile(action, `${base}.csv`, csvData());
+  if (actionMarks.length) await writeFile(action, `${base}_actions.csv`, actionTimesCsv());
   const image = await graphBlob();
   await writeFile(action, `${base}.png`, image);
   session.autoSaved = true;
@@ -524,6 +573,11 @@ function filename(suffix) {
 els.folder.addEventListener("click", () => { void chooseSaveFolder(); });
 els.connect.addEventListener("click", connect);
 els.stop.addEventListener("click", () => { void stopCapture(); });
+els["action-start"].addEventListener("click", () => markAction("start"));
+els["action-end"].addEventListener("click", () => markAction("end"));
+els["actions-csv"].addEventListener("click", () => {
+  if (actionMarks.length) downloadBlob(new Blob([actionTimesCsv()], { type: "text/csv;charset=utf-8" }), filename("actions.csv"));
+});
 els.reset.addEventListener("click", resetSession);
 els.disconnect.addEventListener("click", () => { void disconnectPort(); });
 els.activity.addEventListener("change", selectActivity);
@@ -558,5 +612,6 @@ if (!("serial" in navigator)) {
 }
 if (typeof window.showDirectoryPicker !== "function") els.folder.disabled = true;
 selectActivity();
+updateActionControls();
 updateReadingContext();
 drawGraph();

@@ -146,12 +146,17 @@
       <button id="folder" class="secondary">Choose save folder</button>
       <button id="connect">Connect and record</button>
       <button id="stop" class="secondary" disabled>Stop</button>
+      <button id="action-start" class="secondary" disabled>Mark action start</button>
+      <button id="action-end" class="secondary" disabled>Mark action end</button>
       <button id="reset" class="secondary" disabled>Clear last graph</button>
       <button id="disconnect" class="secondary" disabled>Disconnect ESP32</button>
       <button id="csv" class="secondary" disabled>Download last CSV</button>
       <button id="png" class="secondary" disabled>Download last graph PNG</button>
+      <button id="actions-csv" class="secondary" disabled>Download action times CSV</button>
     </div>
     <p class="note">After Stop, choose the next action and click Start next test; this clears the displayed graph. The ESP32 stays connected until you click Disconnect ESP32 or close this page.</p>
+    <p class="note">For each repeat, tap Mark action start before moving and Mark action end after. Marks appear on the graph and save as an action-times CSV beside the sensor CSV.</p>
+    <div id="action-log" class="note" aria-live="polite">No action times marked.</div>
     <p id="folder-status" class="note">No save folder chosen. Choose one before recording for automatic CSV and graph saving; otherwise use the download buttons.</p>
     <div id="status" role="status" aria-live="polite">Ready. Use Chrome or Edge on a desktop computer.</div>
     <p id="reading-context" class="reading-context" aria-live="polite">No current sensor reading. Start a test to see new data.</p>
@@ -171,7 +176,7 @@
     <div id="hover" class="muted">Move the mouse over the graph to inspect a saved sample.</div>
   </section>
   <p class="note">Chrome or Edge desktop + USB data cable required.</p>
-  <script src="app.js?v=20261102-reading-context"></script>
+  <script src="app.js?v=20261112-actionmarks1"></script>
   <script src="guide.js?v=20261102-reading-context"></script>
 </body>
 </html>
