@@ -30,5 +30,5 @@ Orange — everything simultaneously: Solenoid and LTE activate together, raisin
 Yellow — solenoid, then LTE: Separating activation reduces the peak to approximately 4.14 A. LTE then transmits after the solenoid pulse finishes.
 <img width="1401" height="687" alt="image" src="https://github.com/user-attachments/assets/8030b491-888e-466b-aabd-91b7a8e2e878" />
 Figure 2:
-The red dashed line is 7.5 W, corresponding to \(5\text{ V}\times1.5\text{ A}\).
+The red dashed line is 7.5 W, corresponding to 5 V x 1.5 A
 
