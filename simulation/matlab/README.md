@@ -1,4 +1,8 @@
 # **MATLAB Simulations**
+## Assumptions
+- Solenoid: 5 V, 4 A
+- Power-bank output limit: assumed 3.5 A
+- Capacity comparison: 10,000–15,000 mAh
 <img width="1297" height="596" alt="image" src="https://github.com/user-attachments/assets/dd0c9b7b-6186-4dab-bb6d-68a777a6aa43" />
 <img width="1267" height="661" alt="image" src="https://github.com/user-attachments/assets/5b46325b-7e7c-4351-9374-56e82758dce1" />
 <img width="957" height="505" alt="image" src="https://github.com/user-attachments/assets/6f0b995d-25d1-4a6c-b1d6-d34ed098a67c" />
