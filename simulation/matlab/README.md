@@ -22,7 +22,7 @@
 - ESP32 and sensor current: 55 mA combined.
 - LTE transmission current: 2 A stress-test assumption.
 - Converter efficiency: assumed 90% for input-current calculations.
-- Capacitor-support calculation assumes zero ESR and an ideal 1.5 A source.
+- Capacitor-support calculation assumes zero ESR (Equivalent Series Resistance) and an ideal 1.5 A source.
 <img width="1315" height="716" alt="image" src="https://github.com/user-attachments/assets/2e4229bf-f2ff-4eb1-8c23-d423b912600d" />
 <img width="1401" height="687" alt="image" src="https://github.com/user-attachments/assets/8030b491-888e-466b-aabd-91b7a8e2e878" />
 
