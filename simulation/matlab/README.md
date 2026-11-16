@@ -1,4 +1,5 @@
 # **MATLAB Simulations**
+# Simulation: Solenoid with Test Cases 
 ## Assumptions
 - Solenoid: 5 V, 4 A
 - Power-bank output limit: assumed 3.5 A
@@ -13,4 +14,15 @@
 <img width="1372" height="817" alt="image" src="https://github.com/user-attachments/assets/65722e4a-e98d-41ff-b018-2d4ad25cbd0f" />
 <img width="1467" height="772" alt="image" src="https://github.com/user-attachments/assets/a659e8b5-27a0-4004-8be5-3c5ae67cf737" />
 <img width="1586" height="740" alt="image" src="https://github.com/user-attachments/assets/dc0a04c1-ecc6-4122-8766-571354288005" />
+
+# Simulation: LTC3111 check for fall-vest 5 V / 4 A solenoid
+## ## Assumptions
+- Solenoid: 5 V, 4 A, as specified by the team.
+- Solenoid activation duration: 0.5 seconds.
+- ESP32 and sensor current: 55 mA combined.
+- LTE transmission current: 2 A stress-test assumption.
+- Converter efficiency: assumed 90% for input-current calculations.
+- Capacitor-support calculation assumes zero ESR and an ideal 1.5 A source.
+<img width="1315" height="716" alt="image" src="https://github.com/user-attachments/assets/2e4229bf-f2ff-4eb1-8c23-d423b912600d" />
+<img width="1401" height="687" alt="image" src="https://github.com/user-attachments/assets/8030b491-888e-466b-aabd-91b7a8e2e878" />
 
