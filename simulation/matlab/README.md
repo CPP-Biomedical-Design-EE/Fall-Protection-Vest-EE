@@ -16,7 +16,7 @@
 <img width="1586" height="740" alt="image" src="https://github.com/user-attachments/assets/dc0a04c1-ecc6-4122-8766-571354288005" />
 
 # Simulation: LTC3111 check for fall-vest 5 V / 4 A solenoid
-## ## Assumptions
+##  Assumptions
 - Solenoid: 5 V, 4 A, as specified by the team.
 - Solenoid activation duration: 0.5 seconds.
 - ESP32 and sensor current: 55 mA combined.
