@@ -24,5 +24,8 @@
 - Converter efficiency: assumed 90% for input-current calculations.
 - Capacitor-support calculation assumes zero ESR (Equivalent Series Resistance) and an ideal 1.5 A source.
 <img width="1315" height="716" alt="image" src="https://github.com/user-attachments/assets/2e4229bf-f2ff-4eb1-8c23-d423b912600d" />
+Blue — solenoid only: Draws a requested 4 A from about 2–2.5 seconds.
+Orange — everything simultaneously: Solenoid and LTE activate together, raising demand to approximately 6.12 A. After the solenoid switches off, LTE keeps demand near 2.1 A until 3 seconds.
+Yellow — solenoid, then LTE: Separating activation reduces the peak to approximately 4.14 A. LTE then transmits after the solenoid pulse finishes.
 <img width="1401" height="687" alt="image" src="https://github.com/user-attachments/assets/8030b491-888e-466b-aabd-91b7a8e2e878" />
 
