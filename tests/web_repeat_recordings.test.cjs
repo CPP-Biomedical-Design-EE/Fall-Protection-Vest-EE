@@ -214,3 +214,23 @@ test("action start and end markers save beside each trial and reset for the next
   await page.context.stopCapture();
   await page.context.disconnectPort();
 });
+
+test("seated holds and chair transitions give distinct instructions without changing labels", () => {
+  const page = makePage();
+  for (const label of ["adl_T11_sitting_chair", "adl_T12_sitting_sofa", "adl_T17_lying_bed"]) {
+    page.elements.activity.value = label;
+    page.elements.duration.value = "5";
+    page.context.selectActivity();
+    assert.equal(page.elements.duration.value, "30");
+    assert.equal(page.elements.label.value, label);
+    assert.match(page.elements["activity-guidance"].textContent, /before recording starts/);
+  }
+  page.elements.activity.value = "adl_T14_chair_fast";
+  page.context.selectActivity();
+  assert.equal(page.elements["event-class"].value, "adl");
+  assert.match(page.elements["activity-guidance"].textContent, /stand up quickly/);
+  page.elements.activity.value = "prefall_T50_recovered_balance";
+  page.context.selectActivity();
+  assert.equal(page.elements["event-class"].value, "prefall");
+  assert.match(page.elements["activity-guidance"].textContent, /balance was lost and recovered/);
+});

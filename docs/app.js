@@ -94,13 +94,21 @@ function selectActivity() {
     els.label.value = "";
     els.label.focus();
   }
-  els["activity-guidance"].textContent = label.startsWith("fall_")
+  const activityInstructions = {
+    adl_T11_sitting_chair: "Be seated before recording starts. Remain seated in the chair for 30 seconds; do not include sitting down or getting up.",
+    adl_T12_sitting_sofa: "Be seated on the sofa with your back supported before recording starts. Remain seated for 30 seconds.",
+    adl_T13_chair_normal: "Start standing. Sit down in a chair normally, pause briefly, then stand up normally. Record the complete action.",
+    adl_T14_chair_fast: "Start standing. Sit down in a chair quickly, pause briefly, then stand up quickly, at a comfortable controlled pace. Record the complete action.",
+    adl_T17_lying_bed: "Be lying on the bed before recording starts. Remain lying still for 30 seconds; record lying down and getting up under the movement tasks."
+  };
+  if (["adl_T11_sitting_chair", "adl_T12_sitting_sofa", "adl_T17_lying_bed"].includes(label)) els.duration.value = "30";
+  els["activity-guidance"].textContent = activityInstructions[label] || (label.startsWith("fall_")
     ? "Use this label only for a supervised fall trial. Confirm the actual outcome separately; do not deliberately create an unsafe fall."
     : custom
       ? "Enter a short label, then choose its event class. Use letters, numbers, underscores or hyphens."
       : label.startsWith("prefall_")
         ? "Near-fall means balance was lost and recovered, without ground impact. Do not deliberately create unsafe slips or falls."
-        : "Choose the action actually performed before recording. Automatic files use that action's folder.";
+        : "Choose the action actually performed before recording. Automatic files use that action's folder.");
   updateFolderStatus();
 }
 
