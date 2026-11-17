@@ -34,4 +34,6 @@ Figure 2:
 The capacitor is there to briefly supply extra current when the solenoid turns on, helping prevent the supply voltage from dropping.
 4.75 V, our assumed minimum acceptable voltage. When the curve falls below it, capacitor support has ended for that assumption.
 
+Result: LTC3111 is insufficient as the direct supply for our assumed deployment load. The tested capacitors also cannot bridge the assumed 0.5-second activation.
+
 
