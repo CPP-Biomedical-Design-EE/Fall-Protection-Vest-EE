@@ -28,7 +28,10 @@ Figure 1:
 Blue — solenoid only: Draws a requested 4 A from about 2–2.5 seconds.
 Orange — everything simultaneously: Solenoid and LTE activate together, raising demand to approximately 6.12 A. After the solenoid switches off, LTE keeps demand near 2.1 A until 3 seconds.
 Yellow — solenoid, then LTE: Separating activation reduces the peak to approximately 4.14 A. LTE then transmits after the solenoid pulse finishes.
+The red dashed line is 7.5 W, corresponding to 5 V x 1.5 A. Bars above it require more power.
 <img width="1401" height="687" alt="image" src="https://github.com/user-attachments/assets/8030b491-888e-466b-aabd-91b7a8e2e878" />
 Figure 2:
-The red dashed line is 7.5 W, corresponding to 5 V x 1.5 A
+The capacitor is there to briefly supply extra current when the solenoid turns on, helping prevent the supply voltage from dropping.
+4.75 V, our assumed minimum acceptable voltage. When the curve falls below it, capacitor support has ended for that assumption.
+
 
