@@ -1960,6 +1960,173 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:1N5401"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N5401"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
+				(at 0 -4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88516/1n5400.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "100V 3A General Purpose Rectifier Diode, DO-201AD"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?201AD*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N5401_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N5401_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Sensor_Motion:MPU-6050"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2659,6 +2826,305 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Transistor_FET:AO3400A"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "AO3400A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "AO3400A_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381) (xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AO3400A_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power)
 			(pin_numbers
@@ -2959,6 +3425,24 @@
 		(uuid "efd98945-a4a1-49c0-b9db-a1115668ca21")
 	)
 	(junction
+		(at 196.85 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ec7b51e-0e85-4e0b-9b0a-35e96928bc6b")
+	)
+	(junction
+		(at 196.85 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f8d8c6d-c34a-4047-aa51-8b9a8f0d0881")
+	)
+	(junction
+		(at 196.85 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4ba9c76d-234c-42a7-83b1-61d02382285c")
+	)
+	(junction
 		(at 137.16 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2981,6 +3465,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "adf08d83-a7a3-4240-8557-174e4076d6fc")
+	)
+	(junction
+		(at 196.85 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dcadaf30-c59f-4b4a-8f5b-86293bc0f95d")
+	)
+	(junction
+		(at 208.28 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dee101aa-e595-4360-9356-1fec7b58dc25")
 	)
 	(junction
 		(at 166.37 38.1)
@@ -3072,6 +3568,26 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 133.35) (xy 208.28 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18d0c535-ac7f-4332-bb2d-94c0a83a7535")
+	)
+	(wire
+		(pts
+			(xy 196.85 118.11) (xy 196.85 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a9d614c-7c1b-4097-9bd2-4c0a43b108a4")
+	)
+	(wire
+		(pts
 			(xy 66.04 113.03) (xy 66.04 115.57)
 		)
 		(stroke
@@ -3102,6 +3618,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 109.22) (xy 194.31 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2264b230-98ea-4d0e-b0ba-ab031526a2ae")
+	)
+	(wire
+		(pts
 			(xy 148.59 101.6) (xy 156.21 101.6)
 		)
 		(stroke
@@ -3129,6 +3655,16 @@
 			(type default)
 		)
 		(uuid "2914cef0-349e-4ff2-9244-ccd971692b69")
+	)
+	(wire
+		(pts
+			(xy 198.12 118.11) (xy 196.85 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cf88a7c-57cd-42e2-882e-fe0649dcc49c")
 	)
 	(wire
 		(pts
@@ -3212,13 +3748,23 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 88.9) (xy 173.99 88.9)
+			(xy 148.59 88.9) (xy 167.64 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4d7fcb7c-206e-42c3-9b23-4455fa45b793")
+	)
+	(wire
+		(pts
+			(xy 175.26 125.73) (xy 196.85 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5286d195-02a0-4f48-b4c4-46dff5b9b288")
 	)
 	(wire
 		(pts
@@ -3269,6 +3815,16 @@
 			(type default)
 		)
 		(uuid "64599542-9e53-49a4-a882-82f20ec24d9d")
+	)
+	(wire
+		(pts
+			(xy 196.85 125.73) (xy 203.2 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72f86ad0-4d0e-459d-9e38-038304d745b6")
 	)
 	(wire
 		(pts
@@ -3332,7 +3888,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 104.14) (xy 200.66 104.14)
+			(xy 194.31 104.14) (xy 196.85 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3402,7 +3958,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 133.35) (xy 259.08 133.35)
+			(xy 156.21 133.35) (xy 196.85 133.35)
 		)
 		(stroke
 			(width 0)
@@ -3432,13 +3988,13 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 88.9) (xy 195.58 88.9)
+			(xy 194.31 111.76) (xy 196.85 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b4a35ad8-a9e8-49c7-b7e5-604a809aaccc")
+		(uuid "afe837e6-9da3-43a5-a03f-6c603dae6cac")
 	)
 	(wire
 		(pts
@@ -3452,6 +4008,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 88.9) (xy 175.26 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8cab894-9bcc-479f-848f-782309d5693d")
+	)
+	(wire
+		(pts
 			(xy 248.92 80.01) (xy 209.55 80.01)
 		)
 		(stroke
@@ -3459,6 +4025,26 @@
 			(type default)
 		)
 		(uuid "cc048de4-c925-4715-ab33-94b36063afcc")
+	)
+	(wire
+		(pts
+			(xy 208.28 118.11) (xy 208.28 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce16b317-d81b-4bfc-a639-472115be1723")
+	)
+	(wire
+		(pts
+			(xy 196.85 104.14) (xy 200.66 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce38c8af-7649-483a-93c1-7e4ad9c395d9")
 	)
 	(wire
 		(pts
@@ -3479,6 +4065,16 @@
 			(type default)
 		)
 		(uuid "d8802614-feeb-47e5-b0df-1e97335e9ed5")
+	)
+	(wire
+		(pts
+			(xy 208.28 133.35) (xy 259.08 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfe63255-03bd-474b-814b-d7bae566b832")
 	)
 	(wire
 		(pts
@@ -10948,6 +11544,164 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 196.85 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "528bafe0-a6cb-4b34-917f-3034e4b85718")
+		(property "Reference" "R2"
+			(at 199.39 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100"
+			(at 199.39 130.8099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 197.866 129.794 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 196.85 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b483aa29-de9d-4511-a6ce-92fa71ab19f3")
+		)
+		(pin "1"
+			(uuid "56a800ec-7ea4-43fc-a5e4-89f8b35eb2b3")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5401")
+		(at 196.85 107.95 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "602268c7-0e8e-4f83-bbe1-1527dbe3f20c")
+		(property "Reference" "D1"
+			(at 199.39 106.6799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N5401"
+			(at 199.39 109.2199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
+			(at 192.405 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88516/1n5400.pdf"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 3A General Purpose Rectifier Diode, DO-201AD"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b5c44e2-761b-4b05-b8c5-441d5c8cb5ff")
+		)
+		(pin "2"
+			(uuid "41028375-8a07-4810-8037-51f555460f0e")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 189.23 106.68 180)
 		(unit 1)
@@ -11381,7 +12135,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 177.8 88.9 270)
+		(at 171.45 88.9 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11390,7 +12144,7 @@
 		(fields_autoplaced yes)
 		(uuid "e07771bf-de52-4a3a-af07-b87ea24ccef7")
 		(property "Reference" "R1"
-			(at 177.8 82.55 90)
+			(at 171.45 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11398,7 +12152,7 @@
 			)
 		)
 		(property "Value" "220"
-			(at 177.8 85.09 90)
+			(at 171.45 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11406,7 +12160,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 177.546 89.916 90)
+			(at 171.196 89.916 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11415,7 +12169,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 177.8 88.9 0)
+			(at 171.45 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11424,7 +12178,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 177.8 88.9 0)
+			(at 171.45 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11524,6 +12278,80 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 203.2 120.65 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc6a79bc-9c5f-405b-8c5c-53f13ce1f70c")
+		(property "Reference" "Q1"
+			(at 203.2 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 203.2 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 205.105 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 207.01 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(at 203.2 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5dd0d64a-3032-496c-98a5-6d1a21fbc35f")
+		)
+		(pin "3"
+			(uuid "7fa307a2-92f4-44a6-98b1-a88c89412284")
+		)
+		(pin "2"
+			(uuid "042359e9-ea9c-4d99-ae01-93552cca948c")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
