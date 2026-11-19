@@ -3390,7 +3390,7 @@
 	)
 	(text "Solenoid"
 		(exclude_from_sim no)
-		(at 185.928 118.618 0)
+		(at 186.944 120.65 0)
 		(effects
 			(font
 				(size 2.286 2.286)
@@ -3425,6 +3425,12 @@
 		(uuid "efd98945-a4a1-49c0-b9db-a1115668ca21")
 	)
 	(junction
+		(at 137.16 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26a65f3e-27d0-4aaa-be18-7b93ded48c1f")
+	)
+	(junction
 		(at 196.85 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3441,12 +3447,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ba9c76d-234c-42a7-83b1-61d02382285c")
-	)
-	(junction
-		(at 137.16 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "696c458a-3b87-423d-a417-a4df5037d861")
 	)
 	(junction
 		(at 123.19 38.1)
@@ -3588,16 +3588,6 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 113.03) (xy 66.04 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f0baf1b-9fca-436c-b2a8-8e8b0dcc65e9")
-	)
-	(wire
-		(pts
 			(xy 248.92 74.93) (xy 212.09 74.93)
 		)
 		(stroke
@@ -3618,7 +3608,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 109.22) (xy 194.31 111.76)
+			(xy 193.04 110.49) (xy 193.04 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3838,6 +3828,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 133.35) (xy 66.04 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78911cce-a63d-4a8f-8b7e-a69699dfe408")
+	)
+	(wire
+		(pts
 			(xy 66.04 104.14) (xy 124.46 104.14)
 		)
 		(stroke
@@ -3845,6 +3845,16 @@
 			(type default)
 		)
 		(uuid "78e39100-cd59-4dd4-85e6-515de86ab042")
+	)
+	(wire
+		(pts
+			(xy 137.16 133.35) (xy 66.04 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79bf530a-8b77-48dc-934b-eb3480f89e2c")
 	)
 	(wire
 		(pts
@@ -3878,6 +3888,26 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 104.14) (xy 196.85 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "871a5d1d-7268-4fe5-b0ea-45c87f8ddecb")
+	)
+	(wire
+		(pts
+			(xy 193.04 105.41) (xy 193.04 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88f8ad1e-70d4-4ec1-9ae3-7dbf3de1b4d0")
+	)
+	(wire
+		(pts
 			(xy 166.37 38.1) (xy 166.37 104.14)
 		)
 		(stroke
@@ -3885,16 +3915,6 @@
 			(type default)
 		)
 		(uuid "8b69d64e-243f-455d-91e7-0806932fad9e")
-	)
-	(wire
-		(pts
-			(xy 194.31 104.14) (xy 196.85 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b909777-7a9c-48af-8dde-83ea3c85489b")
 	)
 	(wire
 		(pts
@@ -3988,7 +4008,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 111.76) (xy 196.85 111.76)
+			(xy 193.04 111.76) (xy 196.85 111.76)
 		)
 		(stroke
 			(width 0)
@@ -4075,16 +4095,6 @@
 			(type default)
 		)
 		(uuid "dfe63255-03bd-474b-814b-d7bae566b832")
-	)
-	(wire
-		(pts
-			(xy 66.04 133.35) (xy 137.16 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e483a84d-f21c-44f7-9ad7-d5f77e0c74a4")
 	)
 	(wire
 		(pts
@@ -11250,7 +11260,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_DPST_x2")
-		(at 66.04 128.27 90)
+		(at 66.04 118.11 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11259,7 +11269,7 @@
 		(fields_autoplaced yes)
 		(uuid "41ec31f0-6285-431d-85e3-726f2434b9e7")
 		(property "Reference" "SW1"
-			(at 67.31 126.9999 90)
+			(at 67.31 116.8399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11268,7 +11278,7 @@
 			)
 		)
 		(property "Value" "SW_DPST_x2"
-			(at 67.31 129.5399 90)
+			(at 67.31 119.3799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11277,7 +11287,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 128.27 0)
+			(at 66.04 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11286,7 +11296,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 128.27 0)
+			(at 66.04 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11295,7 +11305,7 @@
 			)
 		)
 		(property "Description" "Single Pole Single Throw (SPST) switch, separate symbol"
-			(at 66.04 128.27 0)
+			(at 66.04 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11703,7 +11713,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 189.23 106.68 180)
+		(at 187.96 107.95 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11711,7 +11721,7 @@
 		(dnp no)
 		(uuid "68bd435f-b5f4-4630-babb-0154b075789b")
 		(property "Reference" "J2"
-			(at 186.436 105.156 90)
+			(at 185.166 106.426 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11720,7 +11730,7 @@
 			)
 		)
 		(property "Value" "Solenoid Electro"
-			(at 183.642 100.33 90)
+			(at 182.372 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11729,7 +11739,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 106.68 0)
+			(at 187.96 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11738,7 +11748,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 189.23 106.68 0)
+			(at 187.96 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11747,7 +11757,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 189.23 106.68 0)
+			(at 187.96 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11973,7 +11983,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery_Cell")
-		(at 66.04 120.65 0)
+		(at 66.04 128.27 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11982,7 +11992,7 @@
 		(fields_autoplaced yes)
 		(uuid "8ce759a0-d821-4b03-b04a-1b7a5ad9935d")
 		(property "Reference" "BT1"
-			(at 69.85 117.5384 0)
+			(at 69.85 125.1584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11991,7 +12001,7 @@
 			)
 		)
 		(property "Value" "Battery_Cell"
-			(at 69.85 120.0784 0)
+			(at 69.85 127.6984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12000,7 +12010,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 119.126 90)
+			(at 66.04 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12009,7 +12019,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 119.126 90)
+			(at 66.04 126.746 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12018,7 +12028,7 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
-			(at 66.04 120.65 0)
+			(at 66.04 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12027,7 +12037,7 @@
 			)
 		)
 		(property "Sim.Device" "V"
-			(at 66.04 120.65 0)
+			(at 66.04 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12036,7 +12046,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 66.04 120.65 0)
+			(at 66.04 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12045,7 +12055,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 66.04 120.65 0)
+			(at 66.04 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
