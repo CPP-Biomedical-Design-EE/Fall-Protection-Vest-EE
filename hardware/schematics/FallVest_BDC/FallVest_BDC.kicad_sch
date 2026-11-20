@@ -1413,6 +1413,330 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Custom:6A10-T"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "CR"
+				(at 5.08 4.445 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "6A10-T"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "R-6_DIO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "6A10-T"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "6A10-T"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R-6_DIO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "6A10-T_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.905) (xy 3.81 -1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.905) (xy 6.35 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 3.81 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 -1.905) (xy 6.35 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "6A10-T_1_2"
+				(polyline
+					(pts
+						(xy -1.905 3.81) (xy 1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy -1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 0 7.62)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 6.35) (xy -1.905 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 3.81) (xy 0 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Custom:SIM7070G · LTE + GNSS"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1943,173 +2267,6 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Diode:1N5401"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "1N5401"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
-				(at 0 -4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.vishay.com/docs/88516/1n5400.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "100V 3A General Purpose Rectifier Diode, DO-201AD"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "D*DO?201AD*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "1N5401_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "1N5401_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3437,12 +3594,6 @@
 		(uuid "2ec7b51e-0e85-4e0b-9b0a-35e96928bc6b")
 	)
 	(junction
-		(at 196.85 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f8d8c6d-c34a-4047-aa51-8b9a8f0d0881")
-	)
-	(junction
 		(at 196.85 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3467,10 +3618,10 @@
 		(uuid "adf08d83-a7a3-4240-8557-174e4076d6fc")
 	)
 	(junction
-		(at 196.85 104.14)
+		(at 195.58 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "dcadaf30-c59f-4b4a-8f5b-86293bc0f95d")
+		(uuid "ba4df117-2c97-49e2-9535-e4dc4c0e4d16")
 	)
 	(junction
 		(at 208.28 133.35)
@@ -3483,6 +3634,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e2c2ec53-3299-4d78-8aa2-fb0221a3f1a7")
+	)
+	(junction
+		(at 195.58 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f276ffa2-1e06-444b-a478-10f2aab9dc19")
 	)
 	(junction
 		(at 156.21 133.35)
@@ -3578,7 +3735,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 118.11) (xy 196.85 111.76)
+			(xy 196.85 118.11) (xy 196.85 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3608,7 +3765,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 110.49) (xy 193.04 111.76)
+			(xy 191.77 110.49) (xy 191.77 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3705,6 +3862,16 @@
 			(type default)
 		)
 		(uuid "373ba945-4e57-4cc0-a877-cdce544ba1c9")
+	)
+	(wire
+		(pts
+			(xy 195.58 101.6) (xy 200.66 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d74d2ec-7ceb-469f-86f4-fed0320d0b89")
 	)
 	(wire
 		(pts
@@ -3888,7 +4055,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 104.14) (xy 196.85 104.14)
+			(xy 191.77 101.6) (xy 195.58 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3898,7 +4065,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 105.41) (xy 193.04 104.14)
+			(xy 191.77 105.41) (xy 191.77 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3998,6 +4165,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 102.87) (xy 195.58 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aebbd2dd-1ab4-4336-bead-05f4e3c6bba7")
+	)
+	(wire
+		(pts
 			(xy 59.69 38.1) (xy 59.69 41.91)
 		)
 		(stroke
@@ -4008,7 +4185,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 111.76) (xy 196.85 111.76)
+			(xy 191.77 113.03) (xy 195.58 113.03)
 		)
 		(stroke
 			(width 0)
@@ -4058,16 +4235,6 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 104.14) (xy 200.66 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce38c8af-7649-483a-93c1-7e4ad9c395d9")
-	)
-	(wire
-		(pts
 			(xy 66.04 104.14) (xy 66.04 105.41)
 		)
 		(stroke
@@ -4085,6 +4252,16 @@
 			(type default)
 		)
 		(uuid "d8802614-feeb-47e5-b0df-1e97335e9ed5")
+	)
+	(wire
+		(pts
+			(xy 195.58 113.03) (xy 196.85 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d99c0d7a-d8cc-4e22-956c-90b6af3c6951")
 	)
 	(wire
 		(pts
@@ -4155,6 +4332,16 @@
 			(type default)
 		)
 		(uuid "f75238c1-4a55-4bdc-a988-212aac82a159")
+	)
+	(wire
+		(pts
+			(xy 200.66 101.6) (xy 200.66 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f85daaf6-cd5a-4a45-8785-65ed137879e8")
 	)
 	(wire
 		(pts
@@ -11129,7 +11316,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 200.66 104.14 0)
+		(at 200.66 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11137,7 +11324,7 @@
 		(dnp no)
 		(uuid "2d15c901-3138-4362-a007-9e28c1923275")
 		(property "Reference" "#PWR02"
-			(at 200.66 107.95 0)
+			(at 200.66 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11146,7 +11333,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 200.66 100.076 0)
+			(at 200.66 96.266 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11154,7 +11341,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 104.14 0)
+			(at 200.66 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11163,7 +11350,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 104.14 0)
+			(at 200.66 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11172,7 +11359,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 200.66 104.14 0)
+			(at 200.66 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11572,7 +11759,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "10k"
 			(at 199.39 130.8099 0)
 			(effects
 				(font
@@ -11624,96 +11811,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:1N5401")
-		(at 196.85 107.95 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "602268c7-0e8e-4f83-bbe1-1527dbe3f20c")
-		(property "Reference" "D1"
-			(at 199.39 106.6799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1N5401"
-			(at 199.39 109.2199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
-			(at 192.405 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/88516/1n5400.pdf"
-			(at 196.85 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "100V 3A General Purpose Rectifier Diode, DO-201AD"
-			(at 196.85 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 196.85 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 196.85 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5b5c44e2-761b-4b05-b8c5-441d5c8cb5ff")
-		)
-		(pin "2"
-			(uuid "41028375-8a07-4810-8037-51f555460f0e")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 187.96 107.95 180)
+		(at 186.69 107.95 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11721,7 +11820,7 @@
 		(dnp no)
 		(uuid "68bd435f-b5f4-4630-babb-0154b075789b")
 		(property "Reference" "J2"
-			(at 185.166 106.426 90)
+			(at 183.896 106.426 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11730,7 +11829,7 @@
 			)
 		)
 		(property "Value" "Solenoid Electro"
-			(at 182.372 101.6 90)
+			(at 181.102 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11739,7 +11838,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 107.95 0)
+			(at 186.69 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11748,7 +11847,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 107.95 0)
+			(at 186.69 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11757,7 +11856,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 187.96 107.95 0)
+			(at 186.69 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12073,6 +12172,77 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "BT1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Custom:6A10-T")
+		(at 195.58 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a05ceed4-578f-41d5-bd36-bbcab8c28ccf")
+		(property "Reference" "CR1"
+			(at 198.628 104.394 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "6A10-T"
+			(at 198.628 106.934 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "R-6_DIO"
+			(at 195.58 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/mcc-micro-commercial-components/6A10-TP/773648"
+			(at 195.58 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 195.58 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d1f20ab-7af2-4d51-a86a-c943375f3126")
+		)
+		(pin "2"
+			(uuid "c78ce9b6-e7eb-4c33-a951-b45abee2c748")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "CR1")
 					(unit 1)
 				)
 			)
