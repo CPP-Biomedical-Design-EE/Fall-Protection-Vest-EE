@@ -2983,9 +2983,8 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_FET:AO3400A"
+		(symbol "Transistor_FET:IRLZ44N"
 			(pin_names
-				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -3000,7 +2999,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "AO3400A"
+			(property "Value" "IRLZ44N"
 				(at 5.08 0 0)
 				(effects
 					(font
@@ -3009,7 +3008,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
 				(at 5.08 -1.905 0)
 				(effects
 					(font
@@ -3020,7 +3019,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(property "Datasheet" "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf"
 				(at 5.08 -3.81 0)
 				(effects
 					(font
@@ -3030,7 +3029,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
+			(property "Description" "47A Id, 55V Vds, 22mOhm Rds Single N-Channel HEXFET Power MOSFET, TO-220AB"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3039,7 +3038,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "N-Channel MOSFET"
+			(property "ki_keywords" "N-Channel HEXFET MOSFET Logic-Level"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3048,7 +3047,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOT?23*"
+			(property "ki_fp_filters" "TO?220*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3057,7 +3056,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "AO3400A_0_1"
+			(symbol "IRLZ44N_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -3201,7 +3200,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.921 0.381) (xy 3.683 0.381)
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
 					)
 					(stroke
 						(width 0)
@@ -3224,7 +3223,7 @@
 					)
 				)
 			)
-			(symbol "AO3400A_1_1"
+			(symbol "IRLZ44N_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -3253,7 +3252,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3271,7 +3270,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -12081,6 +12080,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Transistor_FET:IRLZ44N")
+		(at 203.2 120.65 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "82b04a2a-2bf4-4066-9a91-7a6066d81e85")
+		(property "Reference" "Q2"
+			(at 203.2 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "IRLZ44N"
+			(at 203.2 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 205.105 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf"
+			(at 207.01 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "47A Id, 55V Vds, 22mOhm Rds Single N-Channel HEXFET Power MOSFET, TO-220AB"
+			(at 203.2 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81e816b8-44c4-4402-9741-ac9ca86b22db")
+		)
+		(pin "3"
+			(uuid "e3994bb6-d043-4d2b-a804-324d9fa39128")
+		)
+		(pin "2"
+			(uuid "4f29302a-5eff-4f1e-8a3e-9f35c3c142bb")
+		)
+		(instances
+			(project ""
+				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Battery_Cell")
 		(at 66.04 128.27 0)
 		(unit 1)
@@ -12458,80 +12531,6 @@
 			(project ""
 				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
 					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:AO3400A")
-		(at 203.2 120.65 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fc6a79bc-9c5f-405b-8c5c-53f13ce1f70c")
-		(property "Reference" "Q1"
-			(at 203.2 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AO3400A"
-			(at 203.2 114.3 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 205.105 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
-			(at 207.01 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "30V Vds, 5.7A Id, N-Channel MOSFET, SOT-23"
-			(at 203.2 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5dd0d64a-3032-496c-98a5-6d1a21fbc35f")
-		)
-		(pin "3"
-			(uuid "7fa307a2-92f4-44a6-98b1-a88c89412284")
-		)
-		(pin "2"
-			(uuid "042359e9-ea9c-4d99-ae01-93552cca948c")
-		)
-		(instances
-			(project ""
-				(path "/74063a4b-f2d6-40f5-8694-30dc3de3f53f"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
