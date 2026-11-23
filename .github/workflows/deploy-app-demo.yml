@@ -1,0 +1,46 @@
+name: Deploy app web demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'App Development/**'
+      - '.github/workflows/deploy-app-demo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: app-demo-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: App Development
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.0'
+          channel: stable
+      - run: flutter pub get
+      - run: flutter build web --release --base-href "/Fall-Protection-Vest-EE/"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'App Development/build/web'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
