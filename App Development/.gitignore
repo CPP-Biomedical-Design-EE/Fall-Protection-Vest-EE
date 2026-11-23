@@ -1,0 +1,31 @@
+# Generated Flutter output
+build/
+.dart_tool/
+.pub/
+.pub-cache/
+.flutter-plugins-dependencies
+coverage/
+
+# CocoaPods and generated platform files
+ios/Pods/
+macos/Pods/
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+
+# Never publish active Firebase project configuration or signing material
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+android/app/google-services.json
+lib/firebase_options.dart
+*.mobileprovision
+*.p12
+*.cer
+*.key
+*.keystore
+*.jks
+
+# Local editor/system files
+.DS_Store
+.idea/
+.agents/

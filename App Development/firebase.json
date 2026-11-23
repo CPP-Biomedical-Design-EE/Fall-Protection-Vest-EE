@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "inflatable-vest",
+          "appId": "1:280006653779:android:209a65c526c1ca4aa113a6",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "inflatable-vest",
+          "appId": "1:280006653779:ios:820aa8548c427979a113a6",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "inflatable-vest",
+          "appId": "1:280006653779:ios:820aa8548c427979a113a6",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "inflatable-vest",
+          "configurations": {
+            "android": "1:280006653779:android:209a65c526c1ca4aa113a6",
+            "ios": "1:280006653779:ios:820aa8548c427979a113a6",
+            "macos": "1:280006653779:ios:820aa8548c427979a113a6"
+          }
+        }
+      }
+    }
+  }
+}

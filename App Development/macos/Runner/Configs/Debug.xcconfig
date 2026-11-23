@@ -1,0 +1,7 @@
+#include "../../Flutter/Flutter-Debug.xcconfig"
+#include "Warnings.xcconfig"
+
+// The prototype is run locally on the developer Mac. Avoid signing failures
+// caused by Finder metadata inherited from the Desktop/File Provider folder.
+CODE_SIGNING_ALLOWED = NO
+CODE_SIGNING_REQUIRED = NO
